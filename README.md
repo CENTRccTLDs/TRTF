@@ -6,4 +6,4 @@ of a DNS delegation.
 
 One of the documents will be a list of requirements on a properly delegated
 domain name. The first draft of the list of requirements can be found in
-the [RequirementsList](blob/master/RequirementsList.md) document.
+the [RequirementsList](RequirementsList.md) document.
