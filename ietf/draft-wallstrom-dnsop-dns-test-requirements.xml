@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
+<!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+]>
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="4"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes" ?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
+<rfc category="info" docName="draft-wallstrom-dnsop-dns-test-requirements-00.txt" ipr="trust200902">
+ 	<front>
+    	<title abbrev="EPP Security">DNS Test Requirements</title>
+
+   		<author fullname="Patrik Wallstrom" initials="P.W." role="editor"
+   			surname="Wallstrom">
+      		<organization>IIS</organization>
+      		<address>
+        		<postal>
+          			<street></street>
+          			<city>Stockholm</city>
+          			<region></region>
+          			<code></code>
+          			<country>SE</country>
+        		</postal>
+        		<phone>+46 733 173 956</phone>
+        		<email>pawal@iis.se</email>
+      		</address>
+    	</author>
+
+    <date month="September" year="2015" />
+
+    <abstract>
+    	<t>This document outlines a set of requirements on a well-behaved
+    		DNS delegation. A large number of tools has been developed to
+    		test DNS delegations, but all tools uses a different set of
+    		requirements for what is a correct setup for a delegated
+    		domain name. However, there are few requirements on how to
+    		set up DNS in order to just make the delegation work. But in
+    		order to have a well-behaved delegation that is robust to
+    		failures and also make DNS resolvers behave normally, there
+    		are a large number of things to consider.</t>
+    	<t>Based on this document, it should be possible to create a set
+    		of test specifications for how to test a DNS delegation.</t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+    	<t>text text exempelref (<xref target="RFC5730"/>)</t>
+    	<t>The requirements are split into these different areas, to easier
+    	differentiate between what they are for:</t>
+
+    	<t><list style="numbers">
+    		<t>Basic</t>
+    		<t>Address</t>
+    		<t>Connectivity</t>
+    		<t>Consistency</t>
+    		<t>Delegation</t>
+    		<t>DNSSEC</t>
+    		<t>Name server</t>
+    		<t>Syntax</t>
+    		<t>Zone</t>
+    	</list></t>
+    </section>
+
+    <section title="Basic">
+    	<t>The Basic requirements are fundamental to a working DNS
+    		delegation. Without these properties, the rest of the
+    		requirements are irrelevant.</t>
+    	<section title="The domain must be valid">
+    		<t>The domain name must follow the rules defined in section 2.3.1
+    		of <xref target="RFC1123"/> in order to map the domain into a DNS
+    		packet.</t>
+    	</section>
+    	<section title="The domain must have a parent domain">
+    	</section>
+    	<section title="The domain to have at least one working name server">
+    	</section>
+    </section>
+
+    <section title="Address">
+    	<t>Some text about addresses.</t>
+    	<section title="Name server address must be globally routable">
+    	</section>
+    	<section title="IPv6 address of name server must not to be part of bogon prefix">
+    	</section>
+    </section>
+
+    <section title="Connectivity">
+    	<t>Some text about connectivity.</t>
+    	<section title="All name servers to have UDP connectivity over port 53">
+    	</section>
+    	<section title="All name servers to have TCP connectivity over port 53">
+    	</section>
+    	<section title="The name servers to not be on the same AS">
+    	</section>
+    </section>
+
+    <section title="Consistency">
+		<t>Some text about consistency.</t>
+		<section title="All name servers must respond with the same SOA serial number">
+		</section>
+		<section title="All name servers must respond with the same SOA RNAME">
+		</section>
+		<section title="All name servers must respond with the same SOA parameters">
+		</section>
+		<section title="All name servers must respond with the same NS RR Set">
+		</section>
+	</section>
+
+    <section title="Delegation">
+		<t>Some text about delegations.</t>
+		<section title="The delegation must contain at least two name servers">
+		</section>
+		<section title="The name servers must have distinct IP addresses">
+		</section>
+		<section title="The referral must fit into an non-truncated 512 byte UPD packet">
+		</section>
+		<section title="All name servers must be authoritative for the domain">
+		</section>
+		<section title="The delegation name must exactly match the apex of the child zone">
+		</section>
+		<section title="Glue records in delegation to exactly match records in child zone">
+		</section>
+	</section>
+
+    <section title="DNSSEC">
+		<t>Some text about DNSSEC.</t>
+		<section title="The DS hash digest algorithm must be one of the ones assigned by IANA">
+		</section>
+		<section title="The DNSKEY algorithm must be one of the ones assigned by IANA">
+		</section>
+		<section title="DS must match a DNSKEY in the child zone">
+		</section>
+		<section title="The number of NSEC3 iterations must to be higher than what is allowed">
+		</section>
+		<section title="RRSIG lifetimes neither must not be too short nor too long">
+		</section>
+		<section title="The name server must include RRSIG in all responses to DNSSEC queries">
+		</section>
+		<section title="If child zone includes DNSKEY then parent zone should have DS">
+		</section>
+		<section title="RRSIG of DNSKEY must be valid and must be created by a valid DNSKEY">
+		</section>
+		<section title="RRSIG of SOA must be valid and must be created by a valid DNSKEY">
+		</section>
+		<section title="The name servers must include valid NSEC/NSEC3 record in NXDOMAIN responses">
+		</section>
+		<section title="Delegation from parent to child must be properly signed">
+		</section>
+	</section>
+
+    <section title="Syntax">
+		<t>Some text about Syntax.</t>
+		<section title="No illegal characters must be in the domain name">
+		</section>
+		<section title="No hyphen must be at start or end of the domain name">
+		</section>
+		<section title="No hyphens must be in position 3 *and* 4 of the domain name">
+		</section>
+		<section title="The NS name must be a valid hostname">
+		</section>
+		<section title="The SOA RNAME must not containt the '@' character">
+		</section>
+		<section title="The SOA RNAME must have no illegal characters">
+		</section>
+		<section title="The SOA MNAME to have no illegal characters">
+		</section>
+		<section title="ThMX record in apex to point at a valid hostname">
+		</section>
+	</section>
+
+    <section title="Zone">
+		<t>Some text about Zone.</t>
+		<section title="SOA MNAME must be FQDN of authoritative name server">
+		</section>
+		<section title="SOA MNAME must be an NS of the zone">
+		</section>
+		<section title="SOA REFRESH should to be too low">
+		</section>
+		<section title="SOA RETRY must be lower than 'refresh'">
+		</section>
+		<section title="SOA RETRY should to be too low">
+		</section>
+		<section title="SOA EXPIRE should to be too low">
+		</section>
+		<section title="SOA 'expire' should to be lower than 'refresh'">
+		</section>
+		<section title="SOA 'minimum' should to be too high">
+		</section>
+		<section title="SOA 'minimum' should to be too low">
+		</section>
+		<section title="SOA MNAME must not to point at a CNAME or DNAME alias">
+		</section>
+		<section title="MX record must not to point at a CNAME or DNAME alias">
+		</section>
+		<section title="MX record should be present in apex">
+		</section>
+		<section title="MX record in apex must point at an A or AAAA record">
+		</section>
+	</section>
+
+  </middle>
+
+
+  <back>
+
+  <references title="Normative References">
+  	<?rfc include="reference.RFC.1123" ?>
+  </references>
+  <references title="Informative References">
+	<?rfc include="reference.RFC.5730" ?>
+  </references>
+
+    <!-- Change Log
+
+v00 2014-01-20  PW    Initial version
+
+-->
+
+  </back>
+</rfc>
