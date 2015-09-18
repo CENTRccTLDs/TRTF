@@ -66,24 +66,35 @@
     		<t>Syntax</t>
     		<t>Zone</t>
     	</list></t>
-    </section>
+    	<section title="Reserved Words">
+    		<t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
+    		"SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+    		and "OPTIONAL" in this document are to be interpreted as
+    		described in <xref target="RFC2119"/>.</t>
+    	</section>
+     </section>
 
-    <section title="Basic">
+    <section title="Basic requirements">
     	<t>The Basic requirements are fundamental to a working DNS
     		delegation. Without these properties, the rest of the
     		requirements are irrelevant.</t>
-    	<section title="The domain must be valid">
-    		<t>The domain name must follow the rules defined in section 2.3.1
-    		of <xref target="RFC1123"/> in order to map the domain into a DNS
-    		packet.</t>
+    	<section title="The domain MUST be valid">
+    		<t>The domain name MUST follow the rules defined in section 2.3.1
+    		of <xref target="RFC1123"/> in order to be able to map the domain
+    		into a DNS packet.</t>
     	</section>
-    	<section title="The domain must have a parent domain">
+    	<section title="The domain MUST have a parent domain">
+    		<t>A DNS delegation MUST have a parent domain from which it is
+    		delegated. The concept of zone cuts was first described in
+    		<xref target="RFC1034"/> and later clarified in section 6 of
+    		<xref target="RFC2182"/>. The only exception is the root zone,
+    		which do not have a parent zone.</t>
     	</section>
     	<section title="The domain to have at least one working name server">
     	</section>
     </section>
 
-    <section title="Address">
+    <section title="Address requirements">
     	<t>Some text about addresses.</t>
     	<section title="Name server address must be globally routable">
     	</section>
@@ -91,7 +102,7 @@
     	</section>
     </section>
 
-    <section title="Connectivity">
+    <section title="Connectivity requirements">
     	<t>Some text about connectivity.</t>
     	<section title="All name servers to have UDP connectivity over port 53">
     	</section>
@@ -101,7 +112,7 @@
     	</section>
     </section>
 
-    <section title="Consistency">
+    <section title="Consistency requirements">
 		<t>Some text about consistency.</t>
 		<section title="All name servers must respond with the same SOA serial number">
 		</section>
@@ -113,7 +124,7 @@
 		</section>
 	</section>
 
-    <section title="Delegation">
+    <section title="Delegation requirements">
 		<t>Some text about delegations.</t>
 		<section title="The delegation must contain at least two name servers">
 		</section>
@@ -129,7 +140,7 @@
 		</section>
 	</section>
 
-    <section title="DNSSEC">
+    <section title="DNSSEC requirements">
 		<t>Some text about DNSSEC.</t>
 		<section title="The DS hash digest algorithm must be one of the ones assigned by IANA">
 		</section>
@@ -155,7 +166,7 @@
 		</section>
 	</section>
 
-    <section title="Syntax">
+    <section title="Syntax requirements">
 		<t>Some text about Syntax.</t>
 		<section title="No illegal characters must be in the domain name">
 		</section>
@@ -175,7 +186,7 @@
 		</section>
 	</section>
 
-    <section title="Zone">
+    <section title="Zone requirements">
 		<t>Some text about Zone.</t>
 		<section title="SOA MNAME must be FQDN of authoritative name server">
 		</section>
@@ -207,19 +218,21 @@
 
   </middle>
 
-
   <back>
 
   <references title="Normative References">
+  	<?rfc include="reference.RFC.1034" ?>
   	<?rfc include="reference.RFC.1123" ?>
+  	<?rfc include="reference.RFC.2119" ?>
+  	<?rfc include="reference.RFC.2182" ?>
   </references>
   <references title="Informative References">
 	<?rfc include="reference.RFC.5730" ?>
   </references>
 
-    <!-- Change Log
+<!-- Change Log
 
-v00 2014-01-20  PW    Initial version
+v00 2015-09-18  PW    Initial version
 
 -->
 
