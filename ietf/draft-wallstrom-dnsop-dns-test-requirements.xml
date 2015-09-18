@@ -35,16 +35,18 @@
 
     <abstract>
     	<t>This document outlines a set of requirements on a well-behaved
-    		DNS delegation. A large number of tools has been developed to
-    		test DNS delegations, but all tools uses a different set of
-    		requirements for what is a correct setup for a delegated
-    		domain name. However, there are few requirements on how to
-    		set up DNS in order to just make the delegation work. But in
-    		order to have a well-behaved delegation that is robust to
-    		failures and also make DNS resolvers behave normally, there
-    		are a large number of things to consider.</t>
-    	<t>Based on this document, it should be possible to create a set
-    		of test specifications for how to test a DNS delegation.</t>
+    		DNS delegation of a domain name. A large number of tools has
+            been developed to test DNS delegations, but all tools uses a
+            different set of requirements for what is a correct setup for
+            a delegated domain name. However, there are few requirements
+            on how to set up DNS in order to just make the delegation work.
+            In order to have a well-behaved delegation that is robust
+            to failures and also make DNS resolvers behave consistently,
+            there are a large number of things to consider.</t>
+    	<t>Based on this document, it should be possible to set up a fully
+            functional DNS delegation for a domain, but also to create a
+            set of test specifications for how to test a DNS delegation.
+        </t>
     </abstract>
   </front>
 
@@ -65,23 +67,33 @@
     		<t>Syntax</t>
     		<t>Zone</t>
     	</list></t>
+
+        <section title="DNS Terminlogy">
+            <t>This document tries to fully follow the DNS terminology as
+                defined in <xref target="I-D.ietf-dnsop-dns-terminology"/>.
+            </t>
+        </section>
+
     	<section title="Reserved Words">
     		<t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
     		"SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
     		and "OPTIONAL" in this document are to be interpreted as
     		described in <xref target="RFC2119"/>.</t>
     	</section>
+
      </section>
 
     <section title="Basic requirements">
     	<t>The Basic requirements are fundamental to a working DNS
     		delegation. Without these properties, the rest of the
     		requirements are irrelevant.</t>
+
     	<section title="The domain MUST be valid">
     		<t>The domain name MUST follow the rules defined in section 2.3.1
     		of <xref target="RFC1123"/> in order to be able to map the domain
     		into a DNS packet.</t>
     	</section>
+
     	<section title="The domain MUST have a parent domain">
     		<t>A DNS delegation MUST have a parent domain from which it is
     		delegated. The concept of zone cuts was first described in
@@ -89,6 +101,7 @@
     		<xref target="RFC2182"/>. The only exception is the root zone,
     		which do not have a parent zone.</t>
     	</section>
+
     	<section title="The domain MUST have at least one working name server">
     	</section>
     </section>
@@ -223,6 +236,7 @@
   	  <?rfc include="reference.RFC.1123" ?>
   	  <?rfc include="reference.RFC.2119" ?>
   	  <?rfc include="reference.RFC.2182" ?>
+      <?rfc include="reference.I-D.ietf-dnsop-dns-terminology" ?>
     </references>
     <references title="Informative References">
 	    <?rfc include="reference.RFC.5730" ?>
