@@ -14,23 +14,22 @@
 <?rfc subcompact="no" ?>
 <rfc category="info" docName="draft-wallstrom-dnsop-dns-test-requirements-00.txt" ipr="trust200902">
  	<front>
-    	<title abbrev="EPP Security">DNS Test Requirements</title>
-
-   		<author fullname="Patrik Wallstrom" initials="P.W." role="editor"
-   			surname="Wallstrom">
-      		<organization>IIS</organization>
-      		<address>
-        		<postal>
-          			<street></street>
-          			<city>Stockholm</city>
-          			<region></region>
-          			<code></code>
-          			<country>SE</country>
-        		</postal>
-        		<phone>+46 733 173 956</phone>
-        		<email>pawal@iis.se</email>
-      		</address>
-    	</author>
+    <title abbrev="EPP Security">DNS Test Requirements</title>
+   	<author fullname="Patrik Wallstrom" initials="P.W." role="editor"
+   		surname="Wallstrom">
+    	<organization>IIS</organization>
+    	<address>
+     		<postal>
+     			<street></street>
+     			<city>Stockholm</city>
+     			<region></region>
+     			<code></code>
+     			<country>SE</country>
+      		</postal>
+     		<phone>+46 733 173 956</phone>
+     		<email>pawal@iis.se</email>
+    	</address>
+    </author>
 
     <date month="September" year="2015" />
 
@@ -90,7 +89,7 @@
     		<xref target="RFC2182"/>. The only exception is the root zone,
     		which do not have a parent zone.</t>
     	</section>
-    	<section title="The domain to have at least one working name server">
+    	<section title="The domain MUST have at least one working name server">
     	</section>
     </section>
 
@@ -219,22 +218,19 @@
   </middle>
 
   <back>
-
-  <references title="Normative References">
-  	<?rfc include="reference.RFC.1034" ?>
-  	<?rfc include="reference.RFC.1123" ?>
-  	<?rfc include="reference.RFC.2119" ?>
-  	<?rfc include="reference.RFC.2182" ?>
-  </references>
-  <references title="Informative References">
-	<?rfc include="reference.RFC.5730" ?>
-  </references>
+    <references title="Normative References">
+  	  <?rfc include="reference.RFC.1034" ?>
+  	  <?rfc include="reference.RFC.1123" ?>
+  	  <?rfc include="reference.RFC.2119" ?>
+  	  <?rfc include="reference.RFC.2182" ?>
+    </references>
+    <references title="Informative References">
+	    <?rfc include="reference.RFC.5730" ?>
+    </references>
+  </back>
 
 <!-- Change Log
-
 v00 2015-09-18  PW    Initial version
-
 -->
 
-  </back>
 </rfc>
