@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="US-ASCII"?>
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
 <!ENTITY RFC2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
 <!ENTITY RFC3552 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3552.xml">
-<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 ]>
 <?rfc strict="yes" ?>
 <?rfc toc="yes"?>
@@ -12,9 +12,9 @@
 <?rfc sortrefs="yes" ?>
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
-<rfc category="info" docName="draft-wallstrom-dnsop-dns-test-requirements-00.txt" ipr="trust200902">
+<rfc category="info" docName="draft-wallstrom-dnsop-dns-delegation-requirements-00.txt" ipr="trust200902">
  	<front>
-    <title abbrev="EPP Security">DNS Test Requirements</title>
+    <title abbrev="DNS Delegation Requirements">DNS Delegation Requirements</title>
    	<author fullname="Patrik Wallstrom" initials="P.W." role="editor"
    		surname="Wallstrom">
     	<organization>IIS</organization>
@@ -54,7 +54,6 @@
 
   <middle>
     <section title="Introduction">
-    	<t>text text exempelref (<xref target="RFC5730"/>)</t>
     	<t>The requirements are split into these different areas, to easier
     	differentiate between what they are for:</t>
 
@@ -92,9 +91,10 @@
 
     	<section title="The domain name MUST be valid">
     		<t>The domain name MUST follow the rules defined in section 2.3.1
-    		of <xref target="RFC1123"/> in order to be able to map the domain
-    		into a DNS packet. A domain name is normally valid if the
-            name has been registered with a domain name registry.</t>
+    		of <xref target="RFC1123"/> in order to
+            be able to map the domain into a DNS packet. A domain name is
+            normally valid if the name has been registered with a domain name
+            registry.</t>
     	</section>
 
     	<section title="The domain MUST have a parent domain">
@@ -125,66 +125,20 @@
             <t>IANA is responsible for global coordination of the IP
             addressing system. Aside its address allocation activities,
             it maintains reserved address ranges for special uses.
-            These ranges can be categorized into three types:
-            Special purpose IPv4 addresses, Special purpose IPv6
-            addresses and Multicast reserved addresses.
+            There are two IANA registries for Special-Purpose Addresses,
+            the IANA IPv6 Special-Purpose Address Registry and the
+            IANA IPv4 Special-Purpose Address Registry.
             </t>
 
+            <t><xref target="RFC6890"/> instructs IANA on how to structure
+            the IPv4 and IPv6 Special-Purpose Address Registries.
+            The <xref target="IANAIPv4"/> and the <xref target="IANAIPv6"/>
+            are maintained by IANA. These IANA registries is also described
+            in <xref target="RFC7249"/> in section 2.2 and 2.3.</t>
+
             <t>A name server MUST NOT be using any IP address out of
-            any of these reserved special purpose addresses listed in
-            the following tables.</t>
-
-        <texttable anchor="ipv4_reserved" title="IPv4 Special purpose adresses">
-            <ttcol>Address Block</ttcol>
-            <ttcol>Name</ttcol>
-            <ttcol>Reference</ttcol>
-            <c>0.0.0.0/8</c><c>"This host on this network"</c><c>RFC 1122</c>
-            <c>10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12</c><c>Private-Use</c><c>RFC 1918</c>
-            <c>100.64.0.0/10</c><c>Shared Address Space</c><c>RFC 6598</c>
-            <c>127.0.0.0/8</c><c>Loopback</c><c>RFC 1122</c>
-            <c>169.254.0.0/16</c><c>Link Local</c><c>RFC 3927</c>
-            <c>192.0.0.0/24</c><c>IETF Protocol Assignments</c><c>RFC 6890</c>
-            <c>192.0.0.0/29</c><c>DS-Lite</c><c>RFC 6333</c>
-            <c>192.0.0.170/32, 192.0.0.171/32</c><c>NAT64/DNS64 Discovery</c><c>RFC 7050</c>
-            <c>192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24</c><c>Documentation</c><c>RFC 5737</c>
-            <c>192.88.99.0/24</c><c>6to4 Relay Anycast</c><c>RFC 3068</c>
-            <c>198.18.0.0/15</c><c>Benchmarking</c><c>RFC 2544</c>
-            <c>240.0.0.0/4</c><c>Reserved</c><c>RFC 1112</c>
-            <c>255.255.255.255/32</c><c>Limited Broadcast</c><c>RFC 919</c>
-        </texttable>
-
-        <texttable anchor="ipv6_reserved" title="IPv6 Special purpose adresses">
-            <ttcol>Address Block</ttcol>
-            <ttcol>Name</ttcol>
-            <ttcol>Reference</ttcol>
-            <c>::1/128</c><c>Loopback Address</c><c>RFC 4291</c>
-            <c>::/128</c><c>Unspecified Address</c><c>RFC 4291</c>
-            <c>::ffff:0:0/96</c><c>IPv4-mapped Address</c><c>RFC 4291</c>
-            <c>64:ff9b::/96</c><c>IPv4-IPv6 Translation</c><c>RFC 6052</c>
-            <c>100::/64</c><c>Discard-Only Address Block</c><c>RFC 6666</c>
-            <c>2001::/23</c><c>IETF Protocol Assignments</c><c>RFC 2928</c>
-            <c>2001::/32</c><c>TEREDO</c><c>RFC 4380</c>
-            <c>2001:2::/48</c><c>Benchmarking</c><c>RFC 5180</c>
-            <c>2001:db8::/32</c><c>Documentation</c><c>RFC 3849</c>
-            <c>2001:10::/28</c><c>Deprecated (ORCHID)</c><c>RFC 4843</c>
-            <c>2002::/16</c><c>6to4</c><c>RFC 3056</c>
-            <c>fc00::/7</c><c>Unique-Local</c><c>RFC 4193</c>
-            <c>fe80::/10</c><c>Linked-Scoped Unicast</c><c>RFC 4291</c>
-            <c>::/96</c><c>Deprecated (IPv4-compatible Address)</c><c>RFC 4291</c>
-            <c>5f00::/8, 3ffe::/16</c><c>unallocated (ex 6bone)</c><c>RFC 3701</c>
-            <c>2001::/32</c><c>TEREDO</c><c>RFC 4380</c>
-            <c>::/0</c><c>Default route</c><c>RFC 5156</c>
-        </texttable>
-
-        <texttable anchor="multicast_addresses" title="Multicast addresses">
-            <ttcol>Address Block</ttcol>
-            <ttcol>Name</ttcol>
-            <ttcol>Reference</ttcol>
-            <c>224.0.0.0/4</c><c>IPv4 multicast addresses</c><c>RFC 5771</c>
-            <c>ff00::/8</c><c>IPv6 multicast addresses</c><c>RFC 4291</c>
-        </texttable>
-
-
+            any of these registries that are marked with False in the Global
+            column.</t>
     	</section>
     	<section title="IPv6 address of name server must not to be part of bogon prefix">
     	</section>
@@ -304,6 +258,18 @@
 		</section>
 	</section>
 
+    <section title="Security Considerations">
+        <t>This document has no security considerations.</t>
+    </section>
+
+    <section title="IANA Considerations">
+        <t>This document has no IANA actions.</t>
+    </section>
+
+    <section title="Acknowledgements">
+        <t>Placeholder for now.</t>
+    </section>
+
   </middle>
 
   <back>
@@ -313,9 +279,29 @@
   	  <?rfc include="reference.RFC.2119" ?>
   	  <?rfc include="reference.RFC.2182" ?>
       <?rfc include="reference.I-D.ietf-dnsop-dns-terminology" ?>
+      <reference anchor="IANAIPv4" target="p://www.iana.org/assignments/iana-ipv4-special-registry">
+        <front>
+            <title>IANA IPv4 Special-Purpose Address Registry</title>
+            <author>
+                <organization>IANA</organization>
+            </author>
+            <date month="January" year="2006"/>
+        </front>
+      </reference>
+      <reference anchor="IANAIPv6" target="p://www.iana.org/assignments/iana-ipv6-special-registry">
+        <front>
+            <title>IANA IPv6 Special-Purpose Address Registry</title>
+            <author>
+                <organization>IANA</organization>
+            </author>
+            <date month="January" year="2006"/>
+        </front>
+      </reference>
     </references>
+
     <references title="Informative References">
-	    <?rfc include="reference.RFC.5730" ?>
+        <?rfc include="reference.RFC.6890" ?>
+        <?rfc include="reference.RFC.7249" ?>
     </references>
   </back>
 

@@ -1,7 +1,7 @@
 .DEFAULT: txt
 
 txt:
-	xml2rfc --text draft-wallstrom-dnsop-dns-test-requirements.xml
+	xml2rfc --text draft-wallstrom-dnsop-dns-requirements.xml
 
 clean:
 	rm *.txt
