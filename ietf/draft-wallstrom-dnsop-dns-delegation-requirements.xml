@@ -71,7 +71,7 @@
 
         <section title="DNS Terminology">
             <t>This document tries to fully follow the DNS terminology as
-                defined in <xref target="I-D.ietf-dnsop-dns-terminology"/>. 
+                defined in <xref target="reference.RFC.7719"/>. 
             </t>
         </section>
 
@@ -299,7 +299,7 @@
   	  <?rfc include="reference.RFC.1123" ?>
   	  <?rfc include="reference.RFC.2119" ?>
   	  <?rfc include="reference.RFC.2182" ?>
-      <?rfc include="reference.I-D.ietf-dnsop-dns-terminology" ?>
+      <?rfc include="reference.RFC.7719" ?>
       <reference anchor="IANAIPv4Special" target="https://www.iana.org/assignments/iana-ipv4-special-registry">
         <front>
             <title>IANA IPv4 Special-Purpose Address Registry</title>
