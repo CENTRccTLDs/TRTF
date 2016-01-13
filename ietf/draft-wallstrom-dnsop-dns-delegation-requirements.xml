@@ -71,7 +71,7 @@
 
         <section title="DNS Terminology">
             <t>This document tries to fully follow the DNS terminology as
-                defined in <xref target="reference.RFC.7719"/>. 
+                defined in <xref target="RFC7719"/>. 
             </t>
         </section>
 
