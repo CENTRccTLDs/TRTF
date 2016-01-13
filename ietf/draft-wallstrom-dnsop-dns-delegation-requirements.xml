@@ -69,7 +69,7 @@
     	</list></t>
 
       <t>TODO: a secondary name server operator should follow the advice
-      in the BCP document <xfref target="RFC2182"/>.</t>
+      in the BCP document <xref target="RFC2182"/>.</t>
 
       <section title="DNS Terminology">
         <t>This document attempts to fully follow the DNS terminology as
