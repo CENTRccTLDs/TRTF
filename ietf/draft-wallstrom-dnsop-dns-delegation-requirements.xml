@@ -36,19 +36,18 @@
     <abstract>
     	<t>This document outlines a set of requirements on a well-behaved
     	   DNS delegation of a domain name. A large number of tools has
-           been developed to test DNS delegations, but all tools uses a
-           different set of requirements for what is a correct setup for
-           a delegated domain name. However, there are few requirements
-           on how to set up DNS in order to just make the delegation work.
-           In order to have a well-behaved delegation that is robust
-           to failures and also make DNS resolvers behave consistently,
-           there are a large number of things to consider.</t>
+         been developed to test DNS delegations, but all tools uses a
+         different set of requirements for what is a correct setup for
+         a delegated domain name. However, there are few requirements
+         on how to set up DNS in order to just make the delegation work.
+         In order to have a well-behaved delegation that is robust
+         to failures and also make DNS resolvers behave consistently,
+         there are a large number of things to consider.</t>
     	<t>Based on this document, it should be possible to set up a fully
-           functional DNS delegation for a domain, but also to create a
-           set of test specifications for how to test a DNS delegation.
-           It is typically for testing the Basic section (TODO: add
-           in-document reference) is there.
-        </t>
+        functional DNS delegation for a domain, but also to create a
+        set of test specifications for how to test a DNS delegation.
+        It is typically for testing the Basic section (TODO: add
+        in-document reference) is there.</t>
     </abstract>
   </front>
 
@@ -69,11 +68,14 @@
     		<t>Zone</t>
     	</list></t>
 
-        <section title="DNS Terminology">
-            <t>This document attempts to fully follow the DNS terminology as
-                defined in <xref target="RFC7719"/>. 
-            </t>
-        </section>
+      <section title="DNS Terminology">
+        <t>This document attempts to fully follow the DNS terminology as
+        defined in <xref target="RFC7719"/>.</t>
+        <t>Many requirements in this document deals with the properties
+        of a nameserver that is used as part of a delegation, therefore
+        the wording mentioning the use of a name server as part of this
+        is omitted.</t>
+      </section>
 
     	<section title="Reserved Words">
     		<t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
@@ -167,9 +169,17 @@
 
     <section title="Connectivity requirements">
     	<t>Some text about connectivity.</t>
-    	<section title="All name servers to have UDP connectivity over port 53">
+    	<section title="All name servers MUST have UDP connectivity over port 53">
+        <t>DNS queries are sent using UDP on port 53, as described in section 4.2.1
+        of <xref target="RFC1035"/>. A name server MUST respond to DNS queries
+        over UDP.</t>
     	</section>
-    	<section title="All name servers to have TCP connectivity over port 53">
+    	<section title="All name servers MUST have TCP connectivity over port 53">
+        <t>DNS queries can also be sent using TCP on port 53, as described in
+        section 4.2.2 of <xref target="RFC1035"/>. A name server MUST respond to
+        DNS queries over TCP. This requirement has also been further clarified
+        in <xref target="RFC5966"/>, which makes TCP a REQUIRED part of a full
+        DNS protocol implementation.</t>
     	</section>
     	<section title="The name servers to not be on the same AS">
     	</section>
@@ -295,10 +305,12 @@
 
   <back>
     <references title="Normative References">
-  	  <?rfc include="reference.RFC.1034" ?>
+      <?rfc include="reference.RFC.1034" ?>
+      <?rfc include="reference.RFC.1035" ?>
   	  <?rfc include="reference.RFC.1123" ?>
   	  <?rfc include="reference.RFC.2119" ?>
-  	  <?rfc include="reference.RFC.2182" ?>
+      <?rfc include="reference.RFC.2182" ?>
+      <?rfc include="reference.RFC.5966" ?>
     </references>
 
     <references title="Informative References">
