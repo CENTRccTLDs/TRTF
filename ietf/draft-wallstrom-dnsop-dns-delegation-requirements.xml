@@ -68,6 +68,9 @@
     		<t>Zone</t>
     	</list></t>
 
+      <t>TODO: a secondary name server operator should follow the advice
+      in the BCP document <xfref target="RFC2182"/>.</t>
+
       <section title="DNS Terminology">
         <t>This document attempts to fully follow the DNS terminology as
         defined in <xref target="RFC7719"/>.</t>
@@ -181,7 +184,13 @@
         in <xref target="RFC5966"/>, which makes TCP a REQUIRED part of a full
         DNS protocol implementation.</t>
     	</section>
-    	<section title="The name servers to not be on the same AS">
+    	<section title="The name servers SHOULD not be on the same AS">
+        <t>RFC 2182, section 3.1 states that distinct authoritative name servers
+        for a child domain should be placed in different topological and
+        geographical locations. The objective is to minimise the likelihood of
+        a single failure disabling all of them.</t>
+        <t>To avoid any single point of failure in routing, all name servers
+        SHOULD not be placed within a single routing domain, or AS numbers.</t>
     	</section>
     </section>
 
