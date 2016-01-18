@@ -21,6 +21,14 @@
 %     city="Stockholm"
 %     code=""
 %     country="SE"
+%
+% [[author]]
+% initials="J."
+% surname="Schlyter"
+% fullname="Jakob Schlyter"
+% organization="Kirei AB"
+%     [author.address]
+%     email="jakob@kirei.se"
 
 .# Abstract
 
