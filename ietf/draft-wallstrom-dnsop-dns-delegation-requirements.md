@@ -9,8 +9,8 @@
 % date = 2016-01-15T00:00:00Z
 %
 % [[author]]
-% initials="P.W."
-% surname="Patrik Wallstrom"
+% initials="P."
+% surname="Wallstrom"
 % fullname="Patrik Wallstrom"
 % organization="IIS"
 %     [author.address]
