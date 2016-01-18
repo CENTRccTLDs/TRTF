@@ -246,7 +246,7 @@ Some text about Syntax.
 
 Some text about Zone.
 
-## SOA MNAME must be FQDN of authoritative name server
+## SOA MNAME must be a valid hostname and point to A or AAAA
 ## SOA MNAME must be an NS of the zone
 ## SOA REFRESH should to be too low
 ## SOA RETRY must be lower than 'refresh'
@@ -255,7 +255,6 @@ Some text about Zone.
 ## SOA 'expire' should to be lower than 'refresh'
 ## SOA 'minimum' should to be too high
 ## SOA 'minimum' should to be too low
-## SOA MNAME must not to point at a CNAME or DNAME alias
 ## MX record must not to point at a CNAME or DNAME alias
 ## MX record should be present in apex
 ## MX record in apex must point at an A or AAAA record
