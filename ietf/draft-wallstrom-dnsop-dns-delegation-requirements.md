@@ -308,4 +308,29 @@ Test Requirements Task Force (TRTF).
   </front>
 </reference>
 
+<reference anchor="IANA-DNSSEC-DNSKEY" target="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml">
+  <front>
+      <title>Domain Name System Security (DNSSEC) Algorithm Numbers</title>
+      <author><organization>IANA</organization></author>
+      <date month="November" year="2003"/>
+  </front>
+</reference>
+
+<reference anchor="IANA-DNSSEC-DS" target="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">
+  <front>
+      <title>Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms</title>
+      <author><organization>IANA</organization></author>
+      <date month="Oktober" year="2003"/>
+  </front>
+</reference>
+
+<reference anchor="IANA-DNSSEC-NSEC3" target="https://www.iana.org/assignments/dnssec-nsec3-parameters/dnssec-nsec3-parameters.xhtml">
+  <front>
+      <title>Domain Name System Security (DNSSEC) NextSECure3 (NSEC3) Parameters</title>
+      <author><organization>IANA</organization></author>
+      <date month="December" year="2007"/>
+  </front>
+</reference>
+
+
 {backmatter}
