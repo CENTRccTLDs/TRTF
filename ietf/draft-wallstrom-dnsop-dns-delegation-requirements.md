@@ -69,7 +69,7 @@ document [@!RFC2182].
 ## DNS Terminology
 
 This document attempts to fully follow the DNS terminology as defined in
-[@RFC7719].
+[@!RFC7719].
 
 Many requirements in this document deals with the properties of a nameserver
 that is used as part of a delegation, therefore the wording mentioning the use
