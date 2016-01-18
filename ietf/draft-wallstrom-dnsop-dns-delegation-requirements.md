@@ -255,9 +255,7 @@ Some text about Zone.
 ## SOA 'expire' should to be lower than 'refresh'
 ## SOA 'minimum' should to be too high
 ## SOA 'minimum' should to be too low
-## MX record must not to point at a CNAME or DNAME alias
-## MX record should be present in apex
-## MX record in apex must point at an A or AAAA record
+## MX record in apex must be a valid hostname and point to A or AAAA
 
 # Security Considerations
 
