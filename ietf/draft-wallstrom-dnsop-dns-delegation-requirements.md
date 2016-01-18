@@ -69,7 +69,7 @@ document [@!RFC2182].
 ## DNS Terminology
 
 This document attempts to fully follow the DNS terminology as defined in
-[@RFC7719].
+[@!RFC7719].
 
 Many requirements in this document deals with the properties of a nameserver
 that is used as part of a delegation, therefore the wording mentioning the use
@@ -125,7 +125,7 @@ IANA IPv6 Special- Purpose Address Registry and the IANA IPv4 Special-Purpose
 Address Registry.
 
 [@RFC6890] instructs IANA on how to structure the IPv4 and IPv6 Special-Purpose
-Address Registries. The registries [@IANAIPv4Special] and [@IANAIPv6Special] are
+Address Registries. The registries [@IANA-IPv4-Special] and [@IANA-IPv6-Special] are
 maintained by IANA. These IANA registries is also described in [@RFC7249] in
 section 2.2 and 2.3.
 
@@ -138,10 +138,10 @@ IP addresses not delegated by IANA MUST NOT be used as an addressed used by a
 name server. Thus, any IP address prefix not delegated to a RIR by IANA MUST be
 rejected.
 
-The IANA registry [@IANAIPv6Unicast] SHOULD be used to determine the status of
+The IANA registry [@IANA-IPv6-Unicast] SHOULD be used to determine the status of
 an IPv6 prefix. Only prefixes with the status ALLOCATED is allowed.
 
-The IANA registry [@IANAIPv4Registry] SHOULD be used to determine the status of
+The IANA registry [@IANA-IPv4-Registry] SHOULD be used to determine the status of
 an IPv4 prefix. Only prefixes with the status ALLOCATED and LEGACY is allowed.
 Note that IPv4 LEGACY is not allocated to an RIR. See TODO.
 
@@ -273,7 +273,7 @@ Test Requirements Task Force (TRTF).
 
 <!-- reference we need to include -->
 
-<reference anchor="IANAIPv4Special" target="https://www.iana.org/assignments/iana-ipv4-special-registry">
+<reference anchor="IANA-IPv4-Special" target="https://www.iana.org/assignments/iana-ipv4-special-registry">
   <front>
     <title>IANA IPv4 Special-Purpose Address Registry</title>
     <author><organization>IANA</organization></author>
@@ -281,7 +281,7 @@ Test Requirements Task Force (TRTF).
   </front>
 </reference>
 
-<reference anchor="IANAIPv6Special" target="https://www.iana.org/assignments/iana-ipv6-special-registry">
+<reference anchor="IANA-IPv6-Special" target="https://www.iana.org/assignments/iana-ipv6-special-registry">
   <front>
       <title>IANA IPv6 Special-Purpose Address Registry</title>
       <author><organization>IANA</organization></author>
@@ -289,7 +289,7 @@ Test Requirements Task Force (TRTF).
   </front>
 </reference>
 
-<reference anchor="IANAIPv6Unicast" target="http://www.iana.org/assignments/ipv6-unicast-address-assignments">
+<reference anchor="IANA-IPv6-Unicast" target="http://www.iana.org/assignments/ipv6-unicast-address-assignments">
   <front>
       <title>IPv6 Global Unicast Address Assignments</title>
       <author><organization>IANA</organization></author>
@@ -297,12 +297,37 @@ Test Requirements Task Force (TRTF).
   </front>
 </reference>
 
-<reference anchor="IANAIPv4Registry" target="https://www.iana.org/assignments/ipv4-address-space">
+<reference anchor="IANA-IPv4-Registry" target="https://www.iana.org/assignments/ipv4-address-space">
   <front>
       <title>IANA IPv4 Address Space Registry</title>
       <author><organization>IANA</organization></author>
       <date month="August" year="2015"/>
   </front>
 </reference>
+
+<reference anchor="IANA-DNSSEC-DNSKEY" target="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml">
+  <front>
+      <title>Domain Name System Security (DNSSEC) Algorithm Numbers</title>
+      <author><organization>IANA</organization></author>
+      <date month="November" year="2003"/>
+  </front>
+</reference>
+
+<reference anchor="IANA-DNSSEC-DS" target="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">
+  <front>
+      <title>Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms</title>
+      <author><organization>IANA</organization></author>
+      <date month="Oktober" year="2003"/>
+  </front>
+</reference>
+
+<reference anchor="IANA-DNSSEC-NSEC3" target="https://www.iana.org/assignments/dnssec-nsec3-parameters/dnssec-nsec3-parameters.xhtml">
+  <front>
+      <title>Domain Name System Security (DNSSEC) NextSECure3 (NSEC3) Parameters</title>
+      <author><organization>IANA</organization></author>
+      <date month="December" year="2007"/>
+  </front>
+</reference>
+
 
 {backmatter}
