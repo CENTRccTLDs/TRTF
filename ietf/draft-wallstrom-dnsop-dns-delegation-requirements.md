@@ -172,7 +172,11 @@ REQUIRED part of a full DNS protocol implementation.
 [@RFC2182], section 3.1 states that distinct authoritative name servers for a
 child domain should be placed in different topological and geographical
 locations. The objective is to minimise the likelihood of a single failure
-disabling all of them.
+disabling all of them. Further support for this is given in section 5:
+
+> It is recommended that three servers be provided for most
+> organisation level zones, with at least one which must be well
+> removed from the others.
 
 To avoid any single point of failure in routing, all name servers SHOULD not be
 placed within a single routing domain, or AS numbers.
