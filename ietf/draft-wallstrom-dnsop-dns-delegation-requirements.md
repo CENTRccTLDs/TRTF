@@ -17,9 +17,7 @@
 %     email="pawal@iis.se"
 %     phone="+46-733-173956"
 %     [author.address.postal]
-%     street=""
 %     city="Stockholm"
-%     code=""
 %     country="SE"
 %
 % [[author]]
@@ -182,7 +180,11 @@ placed within a single routing domain, or AS numbers.
 
 # Consistency requirements
 
-Some text about consistency.
+For DNS resolver behaviour to be consistent for a domain, it is important
+that the authoritative data for the domain to be consistent. All name servers
+authoritative domain should serve the same data. An indicator of operator
+failure is that the SOA record differs, and the NS RR set differens between
+the authoratitative name servers.
 
 ## All name servers must respond with the same SOA serial number
 ## All name servers must respond with the same SOA RNAME
