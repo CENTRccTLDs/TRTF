@@ -190,7 +190,15 @@ authoritative domain should serve the same data. An indicator of operator
 failure is that the SOA record differs, and the NS RR set differens between
 the authoratitative name servers.
 
-## All name servers must respond with the same SOA serial number
+## All name servers SHOULD respond with the same SOA serial number
+
+An indication that not all authoritative name servers have a consistent
+and updated copy of the zone is that the serial numbers differ. When quering
+for the SOA RR all name servers SHOULD respond with the same serial record.
+
+Section 4.3.5 in [@RFC1034] explains the typical function of the serial
+numbers in zone Maintenance and transfers.
+
 ## All name servers must respond with the same SOA RNAME
 ## All name servers must respond with the same SOA parameters
 ## All name servers must respond with the same NS RR Set
