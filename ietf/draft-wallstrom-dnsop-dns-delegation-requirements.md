@@ -91,9 +91,7 @@ The domain name MUST follow the rules defined in section 2.3.1 of [@RFC1123] in
 order to be able to map the domain into a DNS packet. A domain name is normally
 valid if the name has been registered with a domain name registry.
 
-
 ## The domain MUST have a parent domain
-
 
 A DNS delegation MUST have a parent domain from which it is delegated. The
 concept of zone cuts was first described in [@RFC1034] and later clarified in
@@ -105,6 +103,7 @@ a parent zone.
 A fully working DNS delegation have a parent zone delegating the zone to a set
 of child name servers. At least one name server MUST be able to answer DNS
 queries in order to be able to serve authoritative data for the child zone.
+
 
 # Address requirements
 
@@ -190,6 +189,10 @@ authoritative domain should serve the same data. An indicator of operator
 failure is that the SOA record differs, and the NS RR set differs between
 the authoratitative name servers.
 
+Section 4.6 in [@RFC4786] advices that data synchronisation in an anycast
+setup should be done in a manner so that anycast nodes operate in a
+consistent manner.
+
 ## All name servers SHOULD respond with the same SOA serial number
 
 An indication that not all authoritative name servers have a consistent
@@ -221,9 +224,13 @@ All authoritative name servers MUST serve the same NS record set
 records descibed in section 3.3.11 of RFC 1035 might result in
 operational failures.
 
+
 # Delegation requirements
 
-Some text about delegations.
+[@RFC2182] is a BCP on how to select and operate secondary name servers,
+and summarize many operational issues with the delegation of a zone.
+For a delegation to work continously if one component fails, there
+are operational considerations to ensure this.
 
 ## The delegation must contain at least two name servers
 ## The name servers must have distinct IP addresses
