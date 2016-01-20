@@ -274,7 +274,14 @@ Subsection 6.1 of [@RFC2181] mandates that the name servers MUST answer
 authoritatively for the zone.
 
 ## The delegation name must exactly match the apex of the child zone
-## Glue records in delegation to exactly match records in child zone
+
+## Glue records in delegation SHOULD exactly match records in child zone
+
+In-bailiwick glue for name servers listed at the parent SHOULD match
+the in-bailiwick glue for the name servers in the child.
+
+If the glue address mismatch between the server and the child, this
+is a strong indication of configuration error.
 
 
 # DNSSEC requirements
