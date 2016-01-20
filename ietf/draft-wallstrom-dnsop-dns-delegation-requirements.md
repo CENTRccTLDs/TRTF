@@ -264,7 +264,15 @@ To avoid any such problems with the delegation, and to avoid any
 unexpected truncation of a referral response, the referral containing
 the delegation from the parent SHOULD fit in 512 bytes.
 
-## All name servers must be authoritative for the domain
+## All name servers MUST be authoritative for the domain
+
+A name server that does not answer authoritatively for the zone is a
+clear sign of misconfiguration, and is a common cause for operational
+problems.
+
+Subsection 6.1 of [@RFC2181] mandates that the name servers MUST answer
+authoritatively for the zone.
+
 ## The delegation name must exactly match the apex of the child zone
 ## Glue records in delegation to exactly match records in child zone
 
