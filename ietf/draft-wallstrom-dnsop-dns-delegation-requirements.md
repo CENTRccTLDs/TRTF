@@ -273,7 +273,15 @@ problems.
 Subsection 6.1 of [@RFC2181] mandates that the name servers MUST answer
 authoritatively for the zone.
 
-## The delegation name must exactly match the apex of the child zone
+## The delegation name MUST exactly match the apex of the child zone
+
+The configured zone on the child name servers MUST match the delegated
+name of the zone. When querying the child name servers for the zone,
+any authoritative data for another name MUST NOT be in the response.
+
+[@RFC2181] states that the SOA RR and the NS RR indicates the origin
+of the zone, and both are mandatory records in a zone. Both RRs MUST
+be present and match the name of the zone.
 
 ## Glue records in delegation SHOULD exactly match records in child zone
 
