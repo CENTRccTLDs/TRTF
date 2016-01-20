@@ -232,7 +232,18 @@ and summarize many operational issues with the delegation of a zone.
 For a delegation to work continously if one component fails, there
 are operational considerations to ensure this.
 
-## The delegation must contain at least two name servers
+## The delegation SHOULD contain at least two name servers
+
+Section 4.1 [@RFC1034] states that by administrative fiat we require
+every zone to be available on at least two name servers. Section 5
+of [@RFC2182] that answers the question on how many name servers are
+needed, the recommendation is that "three servers be provided for most
+organisation level zones, with at least one which must be well
+removed from the others."
+
+In order to avoid any operational problems, a delegation SHOULD contain
+at least to name servers.
+
 ## The name servers must have distinct IP addresses
 ## The referral must fit into an non-truncated 512 byte UPD packet
 ## All name servers must be authoritative for the domain
