@@ -256,7 +256,7 @@ name servers used for the zone MUST use distinct IP addresses.
 
 The DNS still defaults to using UDP, although efforts into requiring
 or transitioning to use TCP have come a long way. The UDP packet limit
-is 512 bytes, and although the EDNS0 ([@6891]) extension mechanism
+is 512 bytes, and although the EDNS0 ([@RFC6891]) extension mechanism
 to overcome this limit have been in use for a very long time, many
 middleboxes and proxies still interfere with DNS packets ([@RFC5652]).
 
