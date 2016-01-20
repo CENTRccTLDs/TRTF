@@ -252,7 +252,18 @@ name servers is to create two names that uses the same IP address.
 To avoid any operational errors and workaround such as this, all
 name servers used for the zone MUST use distinct IP addresses.
 
-## The referral must fit into an non-truncated 512 byte UPD packet
+## The referral SHOULD fit into an non-truncated 512 byte UPD packet
+
+The DNS still defaults to using UDP, although efforts into requiring
+or transitioning to use TCP have come a long way. The UDP packet limit
+is 512 bytes, and although the EDNS0 ([@6891]) extension mechanism
+to overcome this limit, many middleboxes and proxies still interfere
+with DNS packets ([@RFC5652]).
+
+To avoid any such problems with the delegation, and to avoid any
+unexpected truncation of a referral response, the referral containing
+the delegation from the parent SHOULD fit in 512 bytes.
+
 ## All name servers must be authoritative for the domain
 ## The delegation name must exactly match the apex of the child zone
 ## Glue records in delegation to exactly match records in child zone
