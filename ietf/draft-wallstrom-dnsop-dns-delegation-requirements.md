@@ -244,7 +244,14 @@ removed from the others."
 In order to avoid any operational problems, a delegation SHOULD contain
 at least to name servers.
 
-## The name servers must have distinct IP addresses
+## The name servers MUST have distinct IP addresses
+
+A common workaround to a registry policy that requires at least two
+name servers is to create two names that uses the same IP address.
+
+To avoid any operational errors and workaround such as this, all
+name servers used for the zone MUST use distinct IP addresses.
+
 ## The referral must fit into an non-truncated 512 byte UPD packet
 ## All name servers must be authoritative for the domain
 ## The delegation name must exactly match the apex of the child zone
