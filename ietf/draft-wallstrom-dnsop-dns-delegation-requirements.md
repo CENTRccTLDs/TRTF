@@ -200,6 +200,13 @@ Section 4.3.5 in [@RFC1034] explains the typical function of the serial
 numbers in zone Maintenance and transfers.
 
 ## All name servers must respond with the same SOA RNAME
+
+As per section 3.3.13 of RFC 1035, the RNAME field in the SOA RDATA refers
+to the personal contect for the zone. An indication that not all
+authoritative name servers have a consistent and updated copy of the zone
+is that the RNAME differs. When quering for the SOA RR all name servers
+SHOULD respond with the same serial record.
+
 ## All name servers must respond with the same SOA parameters
 ## All name servers must respond with the same NS RR Set
 
