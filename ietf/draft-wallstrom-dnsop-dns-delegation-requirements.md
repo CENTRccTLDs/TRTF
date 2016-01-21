@@ -323,6 +323,10 @@ Some text about DNSSEC.
 
 Some text about Syntax.
 
+All host names in DNS MUST follow the rules outlined in section 2.3.1
+of [@!RFC1035]. The LDH Label has been clarified in section 2.3.1 in
+[@RFC5890]. From this follows the requirements below:
+
 ## No illegal characters must be in the domain name
 ## No hyphen must be at start or end of the domain name
 ## No hyphens must be in position 3 and 4 of the domain name
