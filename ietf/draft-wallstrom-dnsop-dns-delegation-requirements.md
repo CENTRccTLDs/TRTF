@@ -333,7 +333,18 @@ domain name must follow the rules defined in section 2.3.1 of
 and section 2 of [@RFC3696].
 
 ## No hyphen must be at start or end of the domain name
-## No hyphens must be in position 3 and 4 of the domain name
+
+
+
+## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
+
+The effort of internationaliztion of domain names and the development
+of IDNA brought us the extension mechanism of using the string 'xn--'
+to have a special meaning. To allow future extensions to DNS there
+SHOULD be no instances of labels in the DNS that start with two
+characters, followed by two hyphens, where the two characters are not
+"xn". This has been described in section 5 of [@RFC3696].
+
 ## The NS name must be a valid hostname
 ## The SOA RNAME must not containt the '@' character
 ## The SOA RNAME must have no illegal characters
