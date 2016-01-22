@@ -373,7 +373,7 @@ in section 3.3.13 of [@RFC1035]. As a
 field containing a domain name, the content of the RNAME field MUST
 follow the rules outlined in section 2.3.1 of [@!RFC1035].
 
-## The MX record in apex MUST point at a valid hostname
+## The MX record in apex MUST point to a valid hostname
 
 The requirement on the existence of an MX RR in the apex of the child
 zone may vary by policy from different parent zones. However, It is
@@ -382,11 +382,9 @@ have a mailbox named hostmaster@domain. SMTP can make a delivery without
 the MX, using the A or AAAA record as specified in section 5.1 of
 [@RFC5321].
 
-If an MX RR exists in the apex of the child zone the MX RR MUST point
-to a label that follows the rules defined in section 2.3.1 of [@!RFC1035].
-
-That name must also not be an alias (CNAME or DNAME) but MUST resolve
-directly to an A or AAAA RR, as specified in section 10.3 in [@!RFC2821].
+If an MX RR exists in the apex of the child zone, the hostname that
+the MX RR points to MUST follow the rules outlined in section 2.3.1
+of [@!RFC1035] and section 2.1 of [@!RFC1123].
 
 # Zone requirements
 
@@ -404,7 +402,13 @@ The SOA MNAME field is defined in section 3.3.13 of [@RFC1035].
 ## SOA 'expire' should to be lower than 'refresh'
 ## SOA 'minimum' should to be too high
 ## SOA 'minimum' should to be too low
-## MX record in apex must be a valid hostname and point to A or AAAA
+## MX record in apex MUST point to A or AAAA
+
+If an MX RR exists in the apex of the child zone the MX RR MUST point
+to a label that follows the rules defined in section 2.3.1 of [@!RFC1035].
+
+That name must also not be an alias (CNAME or DNAME) but MUST resolve
+directly to an A or AAAA RR, as specified in section 10.3 in [@!RFC2821].
 
 # Security Considerations
 
