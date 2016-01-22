@@ -321,13 +321,17 @@ Some text about DNSSEC.
 
 # Syntax requirements
 
-Some text about Syntax.
+All domain- and host names in DNS MUST follow the rules outlined in
+section 2.3.1 of [@!RFC1035]. The LDH Label has been clarified in
+section 2.3.1 in [@RFC5890]. From this follows the requirements below:
 
-All host names in DNS MUST follow the rules outlined in section 2.3.1
-of [@!RFC1035]. The LDH Label has been clarified in section 2.3.1 in
-[@RFC5890]. From this follows the requirements below:
+## Illegal characters MUST NOT be in the domain name
 
-## No illegal characters must be in the domain name
+There MUST NOT be any illegal characters used in the domain name. The
+domain name must follow the rules defined in section 2.3.1 of
+[@!RFC1035], section 2.1 of [@!RFC1123], section 11 of [@!RFC2182]
+and section 2 of [@RFC3696].
+
 ## No hyphen must be at start or end of the domain name
 ## No hyphens must be in position 3 and 4 of the domain name
 ## The NS name must be a valid hostname
