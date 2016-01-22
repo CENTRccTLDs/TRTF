@@ -322,8 +322,9 @@ Some text about DNSSEC.
 # Syntax requirements
 
 All domain- and host names in DNS MUST follow the rules outlined in
-section 2.3.1 of [@!RFC1035]. The LDH Label has been clarified in
-section 2.3.1 in [@RFC5890]. From this follows the requirements below:
+section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label has been
+further clarified in Section 11 in [@RFC2181] and section 2.3.1 in
+[@RFC5890]. From this follows the requirements below:
 
 ## Illegal characters MUST NOT be in the domain name
 
@@ -333,9 +334,6 @@ domain name must follow the rules defined in section 2.3.1 of
 and section 2 of [@RFC3696].
 
 ## No hyphen must be at start or end of the domain name
-
-
-
 ## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
 
 The effort of internationaliztion of domain names and the development
@@ -345,7 +343,12 @@ SHOULD be no instances of labels in the DNS that start with two
 characters, followed by two hyphens, where the two characters are not
 "xn". This has been described in section 5 of [@RFC3696].
 
-## The NS name must be a valid hostname
+## The NS names MUST be valid hostnames
+
+The Name Server name MUST be a valid hostname according to the rules
+defined in section 2.3.1 of [@!RFC1035], in section 2.1 in RFC 1123,
+section 11 in [@!RFC2182] and section 2 and 5 in [@RFC3696].
+
 ## The SOA RNAME must not containt the '@' character
 ## The SOA RNAME must have no illegal characters
 ## The SOA MNAME to have no illegal characters
