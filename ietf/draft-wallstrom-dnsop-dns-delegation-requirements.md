@@ -358,7 +358,13 @@ field MUST follow the rules of an e-mail address defined in section
 the whole e-mail address is converted into a single domain name as
 described in section 3.3 of [@RFC1034].
 
-## The SOA RNAME must have no illegal characters
+## The SOA RNAME MUST NOT contain any illegal characters
+
+The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
+in section 3.3 of [@RFC1034] and section 2.2 of [@RFC1912]. As a
+field containing a domain name, the content of the RNAME field MUST
+follow the rules outlined in section 2.3.1 of [@!RFC1035].
+
 ## The SOA MNAME to have no illegal characters
 ## The MX record in apex to point at a valid hostname
 
