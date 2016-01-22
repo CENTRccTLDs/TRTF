@@ -349,7 +349,15 @@ The Name Server name MUST be a valid hostname according to the rules
 defined in section 2.3.1 of [@!RFC1035], in section 2.1 in RFC 1123,
 section 11 in [@!RFC2182] and section 2 and 5 in [@RFC3696].
 
-## The SOA RNAME must not containt the '@' character
+## The SOA RNAME MUST not contain the '@' character
+
+The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
+in section 3.3 of [@RFC1034] and section 2.2 of [@RFC1912]. The RNAME
+field MUST follow the rules of an e-mail address defined in section
+3.4.1 of [@!RFC 2822], and the '@' character MUST be changed so that
+the whole e-mail address is converted into a single domain name as
+described in section 3.3 of [@RFC1034].
+
 ## The SOA RNAME must have no illegal characters
 ## The SOA MNAME to have no illegal characters
 ## The MX record in apex to point at a valid hostname
