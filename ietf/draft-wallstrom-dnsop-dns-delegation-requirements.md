@@ -219,10 +219,10 @@ consistent for all authoritative name servers for the zone.
 
 ## All name servers MUST respond with the same NS RR Set
 
-All authoritative name servers MUST serve the same NS record set
-(section 4.2.2 of [!@RFC1034]) for the zone. Any inconsistency of NS
-records descibed in section 3.3.11 of RFC 1035 might result in
-operational failures.
+All authoritative name servers MUST serve the same NS record set, in
+order to ensure consistency in the zone cut as described in section
+4.2.2 of [!@RFC1034]. Any inconsistency of NS records descibed in section
+3.3.11 of RFC 1035 might result in operational failures.
 
 
 # Delegation requirements
