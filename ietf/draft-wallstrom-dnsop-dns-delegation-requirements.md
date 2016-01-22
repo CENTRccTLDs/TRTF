@@ -369,17 +369,33 @@ follow the rules outlined in section 2.3.1 of [@!RFC1035] and section
 ## The SOA MNAME MUST be a legal hostname
 
 The SOA MNAME field is a hostname. The SOA MNAME field is defined
-in section 3.3 of [@RFC1034]. As a
+in section 3.3.13 of [@RFC1035]. As a
 field containing a domain name, the content of the RNAME field MUST
 follow the rules outlined in section 2.3.1 of [@!RFC1035].
 
-## The MX record in apex to point at a valid hostname
+## The MX record in apex MUST point at a valid hostname
+
+The requirement on the existence of an MX RR in the apex of the child
+zone may vary by policy from different parent zones. However, It is
+strongly recommended in section 7 of [@RFC2142] that all domains should
+have a mailbox named hostmaster@domain. SMTP can make a delivery without
+the MX, using the A or AAAA record as specified in section 5.1 of
+[@RFC5321].
+
+If an MX RR exists in the apex of the child zone the MX RR MUST point
+to a label that follows the rules defined in section 2.3.1 of [@!RFC1035].
+
+That name must also not be an alias (CNAME or DNAME) but MUST resolve
+directly to an A or AAAA RR, as specified in section 10.3 in [@!RFC2821].
 
 # Zone requirements
 
 Some text about Zone.
 
 ## SOA MNAME must be a valid hostname and point to A or AAAA
+
+The SOA MNAME field is defined in section 3.3.13 of [@RFC1035].
+
 ## SOA MNAME must be an NS of the zone
 ## SOA REFRESH should to be too low
 ## SOA RETRY must be lower than 'refresh'
