@@ -111,19 +111,20 @@ address space.
 
 ## Name server address MUST be globally routable
 
-In order for the domain and its resources to be accessible, authoritative name
-servers must have addresses in the routable public addressing space.
+In order for the domain and its resources to be accessible from the Internet,
+authoritative name servers must have addresses in the routable public
+addressing space.
 
 IANA is responsible for global coordination of the IP addressing system. Aside
 its address allocation activities, it maintains reserved address ranges for
 special uses. There are two IANA registries for Special-Purpose Addresses, the
-IANA IPv6 Special- Purpose Address Registry and the IANA IPv4 Special-Purpose
+IANA IPv6 Special-Purpose Address Registry and the IANA IPv4 Special-Purpose
 Address Registry.
 
 [@RFC6890] instructs IANA on how to structure the IPv4 and IPv6 Special-Purpose
-Address Registries. The registries [@IANA-IPv4-Special] and [@IANA-IPv6-Special] are
-maintained by IANA. These IANA registries is also described in [@RFC7249] in
-Section 2.2 and 2.3.
+Address Registries. The registries [@IANA-IPv4-Special] and
+[@IANA-IPv6-Special] are maintained by IANA, and is also described in Section
+2.2 and 2.3 of [@RFC7249].
 
 A name server MUST NOT be using any IP address out of any of these registries
 that are marked with False in the Global column.
@@ -131,22 +132,21 @@ that are marked with False in the Global column.
 ## The IP address of a name server MUST be delegated by IANA
 
 IP addresses not delegated by IANA MUST NOT be used as an addressed used by a
-name server. Thus, any IP address prefix not delegated to a RIR by IANA MUST be
-rejected.
+name server. Thus, IP addresses within a prefix not delegated to a RIR by IANA
+MUST be rejected.
 
 The IANA registry [@IANA-IPv6-Unicast] SHOULD be used to determine the status of
-an IPv6 prefix. Only prefixes with the status ALLOCATED is allowed.
+an IPv6 prefix. Only prefixes with the status ALLOCATED are allowed.
 
-The IANA registry [@IANA-IPv4-Registry] SHOULD be used to determine the status of
-an IPv4 prefix. Only prefixes with the status ALLOCATED and LEGACY is allowed.
-Note that IPv4 LEGACY is not allocated to an RIR. See TODO.
+The IANA registry [@IANA-IPv4-Registry] SHOULD be used to determine the status
+of an IPv4 prefix. Only prefixes with the status ALLOCATED and LEGACY are
+allowed. Note that IPv4 LEGACY is not allocated to a RIR.
 
 Martians [@RFC1208] is a humorous term applied to packets that turn up
 unexpectedly on the wrong network because of bogus routing entries. Bogons
 [@RFC3871] are packets sourced from addresses that have not yet been allocated
-by IANA or the Regional Internet Registries (RIRs), or not delegated to a RIR
-by IANA as described above. These kind of addresses SHOULD not be used for a
-name server either.
+by IANA or a RIR, or not delegated to a RIR by IANA as described above.
+Martians and Bogons SHOULD not be used as an addressed used by a name server.
 
 
 #  Connectivity requirements
