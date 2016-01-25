@@ -294,7 +294,15 @@ is a strong indication of configuration error.
 
 # DNSSEC requirements
 
-Some text about DNSSEC.
+If DNSSEC is used for the zone, either by indicating that the zone is
+signed with a DS record, or the use of a DNSKEY in the zone itself, a
+number of things are required for a fully functional delegation.
+
+The Domain Name System Security Extensions (DNSSEC) add data origin
+authentication and data integrity to the Domain Name System, and was
+first introduced with the RFCs [@RFC4033], [@RFC4034] and [@RFC4035].
+The are also a number of additions to DNSSEC such as NSEC3 described
+in [@RFC5155], and a number of algorithms to the cryptographic functions.
 
 ## The DS hash digest algorithm must be one of the ones assigned by IANA
 
@@ -373,6 +381,9 @@ in section 3.3.13 of [@RFC1035]. As a
 field containing a domain name, the content of the RNAME field MUST
 follow the rules outlined in section 2.3.1 of [@!RFC1035].
 
+Furthermore, section 7.3 in [@RFC2181] makes it clear that the SOA MNAME
+field SHOULD NOT be the name of the zone itself.
+
 ## The MX record in apex MUST point to a valid hostname
 
 The requirement on the existence of an MX RR in the apex of the child
@@ -390,7 +401,7 @@ of [@!RFC1035] and section 2.1 of [@!RFC1123].
 
 Some text about Zone.
 
-## SOA MNAME must be a valid hostname and point to A or AAAA
+## SOA MNAME SHOULD point A or AAAA
 
 The SOA MNAME field is defined in section 3.3.13 of [@RFC1035].
 
