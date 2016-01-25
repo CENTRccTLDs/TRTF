@@ -343,6 +343,12 @@ Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
 
 Any DNSKEY algorithm number used for in a zone MUST be assigned by IANA.
 
+## Chain of trust of delegation
+
+A valid authentication chain from the parent DS, as described in Section 3.1 of
+[@RFC4033], MUST existing for the SOA, DNSKEY and NS records of the child zone
+if a DS record is published in the parent zone.
+
 ## One DS MUST match a least one DNSKEY in the child zone
 
 DNS delegations from a parent to a child are secured with DNSSEC by publishing
@@ -375,14 +381,6 @@ be good for operational security, but opens up for replay attacks.
 
 The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
-## If child zone includes DNSKEY then parent zone should have DS
-
-https://tools.ietf.org/html/rfc4035#section-3.1.4
-
-## RRSIG of DNSKEY must be valid and must be created by a valid DNSKEY
-
-## RRSIG of SOA must be valid and must be created by a valid DNSKEY
-
 ## The name server must include RRSIG in all responses to DNSSEC queries
 
 If the zone is signed, the name servers MUST be able to include RRSIG RRs
@@ -394,8 +392,6 @@ described in Section 3.1.1 of [@!RFC4035].
 If the zone is signed, the name servers MUST be able to include NSEC/NSEC3 RRs
 as additional data in any response when the query has the DO bit set, as
 described in Section 3.1.1 of [@!RFC4035].
-
-## Delegation from parent to child must be properly signed
 
 
 # Syntax requirements
