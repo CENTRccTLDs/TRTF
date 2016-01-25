@@ -171,7 +171,6 @@ servers. However, it also notes that failure to support TCP (or the blocking of
 DNS over TCP at the network layer) may result in resolution failure and/or
 application-level timeouts.
 
-
 ## The name servers SHOULD NOT belong to the same AS
 
 [@RFC2182], Section 3.1 states that distinct authoritative name servers for a
@@ -185,7 +184,6 @@ disabling all of them. Further support for this is given in Section 5:
 
 To avoid any single point of failure in routing, all name servers SHOULD NOT be
 placed within a single routing domain, or AS (autonomous system).
-
 
 # Consistency requirements
 
