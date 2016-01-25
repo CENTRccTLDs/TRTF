@@ -307,12 +307,20 @@ in [@RFC5155], and a number of algorithms to the cryptographic functions.
 ## The DS Digest Type MUST be assigned by IANA
 
 The The Digest Type Field is defined as part of the DS RDATA Wire Format
-of Section 5.1.3 in [@RFC1034]. The appendix A.2 defines the defined
+of section 5.1.3 in [@RFC4034]. The appendix A.2 defines the defined
 digest algorithm types with possible future algorithms. The IANA registry
-for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658]. Any
-DS RR used for the zone MUST be assigned by IANA.
+for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658].
+
+Any DS RR used for the zone MUST be assigned by IANA.
 
 ## The DNSKEY algorithm must be one of the ones assigned by IANA
+
+The DNSKEY RR is defined in section 2 of [@RFC4034] as part of the DNSKEY
+RDATA Wire Format. The appendix A.1 defines the initial list of DNSKEY
+Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
+[@IANA-DNSSEC-DNSKEY] was created with [@RFC3755].
+
+Any DNSKEY present in the zone MUST be assigned by IANA.
 
 ## DS must match a DNSKEY in the child zone
 
