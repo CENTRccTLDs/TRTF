@@ -173,7 +173,7 @@ DNS over TCP at the network layer) may result in resolution failure and/or
 application-level timeouts.
 
 
-## The name servers SHOULD not be on the same AS
+## The name servers SHOULD NOT belong to the same AS
 
 [@RFC2182], Section 3.1 states that distinct authoritative name servers for a
 child domain should be placed in different topological and geographical
@@ -185,7 +185,7 @@ disabling all of them. Further support for this is given in Section 5:
 > removed from the others.
 
 To avoid any single point of failure in routing, all name servers SHOULD not be
-placed within a single routing domain, or AS numbers.
+placed within a single routing domain, or AS (autonomous system).
 
 
 # Consistency requirements
