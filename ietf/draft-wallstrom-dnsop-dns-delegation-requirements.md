@@ -378,6 +378,10 @@ The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
 ## The name server must include RRSIG in all responses to DNSSEC queries
 
+If the zone is signed, the name servers MUST be able to include RRSIG RRs
+as additional data in any response when the query has the DO bit set, as
+described in Section 3.1.1 of [@!RFC4035].
+
 ## If child zone includes DNSKEY then parent zone should have DS
 
 https://tools.ietf.org/html/rfc4035#section-3.1.4
