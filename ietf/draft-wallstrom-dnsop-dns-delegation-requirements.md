@@ -220,18 +220,18 @@ As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
 to the mailbox of the person responsible for the zone. An indication that not
 all authoritative name servers have a consistent and updated copy of the zone
 is that the RNAME differs. When quering for the SOA RR all name servers SHOULD
-respond with the same serial record.
+respond with the same SOA RNAME.
 
 ## All name servers SHOULD respond with the same SOA parameters
 
-The inconsistency of the SOA parameters REFRESH, RETRY, EXPIRE
-and MINIMUM might lead to operational problems for the zone. The fields are
-defined in Section 3.3.13 of [@!RFC1035]. These SOA parameters SHOULD be
-consistent for all authoritative name servers for the zone.
+The inconsistency of the SOA parameters REFRESH, RETRY, EXPIRE and MINIMUM,
+defined in Section 3.3.13 of [@!RFC1035], might lead to operational problems
+for the zone. These SOA parameters SHOULD be consistent for all authoritative
+name servers for the zone.
 
 ## All name servers MUST respond with the same NS RR Set
 
-All authoritative name servers MUST serve the same NS record set, in
+All authoritative name servers MUST serve the same NS record set in
 order to ensure consistency in the zone cut as described in Section
 4.2.2 of [!@RFC1034]. Any inconsistency of NS records descibed in Section
 3.3.11 of RFC 1035 might result in operational failures.
