@@ -86,7 +86,7 @@ these properties, the rest of the requirements are irrelevant.
 
 ## The domain name MUST be valid
 
-The domain name MUST follow the rules defined in section 2.3.1 of [@RFC1123] in
+The domain name MUST follow the rules defined in Section 2.3.1 of [@RFC1123] in
 order to be able to map the domain into a DNS packet. A domain name is normally
 valid if the name has been registered with a domain name registry.
 
@@ -94,7 +94,7 @@ valid if the name has been registered with a domain name registry.
 
 A DNS delegation MUST have a parent domain from which it is delegated. The
 concept of zone cuts was first described in [@RFC1034] and later clarified in
-section 6 of [@RFC2182]. The only exception is the root zone, which do not have
+Section 6 of [@RFC2182]. The only exception is the root zone, which do not have
 a parent zone.
    
 ## The domain MUST have at least one working name server
@@ -123,7 +123,7 @@ Address Registry.
 [@RFC6890] instructs IANA on how to structure the IPv4 and IPv6 Special-Purpose
 Address Registries. The registries [@IANA-IPv4-Special] and [@IANA-IPv6-Special] are
 maintained by IANA. These IANA registries is also described in [@RFC7249] in
-section 2.2 and 2.3.
+Section 2.2 and 2.3.
 
 A name server MUST NOT be using any IP address out of any of these registries
 that are marked with False in the Global column.
@@ -155,22 +155,22 @@ Some text about connectivity.
 
 ## All name servers MUST have UDP connectivity over port 53
 
-DNS queries are sent using UDP on port 53, as described in section 4.2.1 of
+DNS queries are sent using UDP on port 53, as described in Section 4.2.1 of
 [@RFC1035]. A name server MUST respond to DNS queries over UDP.
 
 ## All name servers MUST have TCP connectivity over port 53
 
-DNS queries can also be sent using TCP on port 53, as described in section
+DNS queries can also be sent using TCP on port 53, as described in Section
 4.2.2 of [@RFC1035]. A name server MUST respond to DNS queries over TCP. This
 requirement has also been further clarified in [@RFC5966], which makes TCP a
 REQUIRED part of a full DNS protocol implementation.
 
 ## The name servers SHOULD not be on the same AS
 
-[@RFC2182], section 3.1 states that distinct authoritative name servers for a
+[@RFC2182], Section 3.1 states that distinct authoritative name servers for a
 child domain should be placed in different topological and geographical
 locations. The objective is to minimise the likelihood of a single failure
-disabling all of them. Further support for this is given in section 5:
+disabling all of them. Further support for this is given in Section 5:
 
 > It is recommended that three servers be provided for most
 > organisation level zones, with at least one which must be well
@@ -203,7 +203,7 @@ numbers in zone Maintenance and transfers.
 
 ## All name servers SHOULD respond with the same SOA RNAME
 
-As per section 3.3.13 of [@RFC1035], the RNAME field in the SOA RDATA refers
+As per Section 3.3.13 of [@RFC1035], the RNAME field in the SOA RDATA refers
 to the personal contect for the zone. An indication that not all
 authoritative name servers have a consistent and updated copy of the zone
 is that the RNAME differs. When quering for the SOA RR all name servers
@@ -213,14 +213,14 @@ SHOULD respond with the same serial record.
 
 The inconsistency of the SOA parameters REFRESH, RETRY, EXPIRE
 and MINIMUM might lead to operational problems for the zone. The fields are
-defined in section 3.3.13 of [@RFC1035]. These SOA parameters SHOULD be
+defined in Section 3.3.13 of [@RFC1035]. These SOA parameters SHOULD be
 consistent for all authoritative name servers for the zone.
 
 ## All name servers MUST respond with the same NS RR Set
 
 All authoritative name servers MUST serve the same NS record set, in
-order to ensure consistency in the zone cut as described in section
-4.2.2 of [!@RFC1034]. Any inconsistency of NS records descibed in section
+order to ensure consistency in the zone cut as described in Section
+4.2.2 of [!@RFC1034]. Any inconsistency of NS records descibed in Section
 3.3.11 of RFC 1035 might result in operational failures.
 
 
@@ -306,7 +306,7 @@ in [@RFC5155], and a number of algorithms to the cryptographic functions.
 ## The DS Digest Type MUST be assigned by IANA
 
 The The Digest Type Field is defined as part of the DS RDATA Wire Format
-of section 5.1.3 in [@RFC1034]. The appendix A.2 defines the defined
+of Section 5.1.3 in [@RFC1034]. The appendix A.2 defines the defined
 digest algorithm types with possible future algorithms. The IANA registry
 for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658]. Any
 DS RR used for the zone MUST be assigned by IANA.
@@ -335,16 +335,16 @@ DS RR used for the zone MUST be assigned by IANA.
 # Syntax requirements
 
 All domain- and host names in DNS MUST follow the rules outlined in
-section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label has been
-further clarified in Section 11 in [@RFC2181] and section 2.3.1 in
+Section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label has been
+further clarified in Section 11 in [@RFC2181] and Section 2.3.1 in
 [@RFC5890]. From this follows the requirements below:
 
 ## Illegal characters MUST NOT be in the domain name
 
 There MUST NOT be any illegal characters used in the domain name. The
-domain name must follow the rules defined in section 2.3.1 of
-[@!RFC1035], section 2.1 of [@!RFC1123], section 11 of [@!RFC2182]
-and section 2 of [@RFC3696].
+domain name must follow the rules defined in Section 2.3.1 of
+[@!RFC1035], Section 2.1 of [@!RFC1123], Section 11 of [@!RFC2182]
+and Section 2 of [@RFC3696].
 
 ## No hyphen must be at start or end of the domain name
 ## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
@@ -354,53 +354,53 @@ of IDNA brought us the extension mechanism of using the string 'xn--'
 to have a special meaning. To allow future extensions to DNS there
 SHOULD be no instances of labels in the DNS that start with two
 characters, followed by two hyphens, where the two characters are not
-"xn". This has been described in section 5 of [@RFC3696].
+"xn". This has been described in Section 5 of [@RFC3696].
 
 ## The NS names MUST be valid hostnames
 
 The Name Server name MUST be a valid hostname according to the rules
-defined in section 2.3.1 of [@!RFC1035], in section 2.1 in RFC 1123,
-section 11 in [@!RFC2182] and section 2 and 5 in [@RFC3696].
+defined in Section 2.3.1 of [@!RFC1035], in Section 2.1 in RFC 1123,
+Section 11 in [@!RFC2182] and Section 2 and 5 in [@RFC3696].
 
 ## The SOA RNAME MUST not contain the '@' character
 
 The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in section 3.3 of [@RFC1034] and section 2.2 of [@RFC1912]. The RNAME
-field MUST follow the rules of an e-mail address defined in section
+in Section 3.3 of [@RFC1034] and Section 2.2 of [@RFC1912]. The RNAME
+field MUST follow the rules of an e-mail address defined in Section
 3.4.1 of [@!RFC2822], and the '@' character MUST be changed so that
 the whole e-mail address is converted into a single domain name as
-described in section 3.3 of [@!RFC1034] and section 2.1 of [@!RFC1123].
+described in Section 3.3 of [@!RFC1034] and Section 2.1 of [@!RFC1123].
 
 ## The SOA RNAME MUST be a legal hostname
 
 The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in section 3.3 of [@RFC1034] and section 2.2 of [@RFC1912]. As a
+in Section 3.3 of [@RFC1034] and Section 2.2 of [@RFC1912]. As a
 field containing a domain name, the content of the RNAME field MUST
-follow the rules outlined in section 2.3.1 of [@!RFC1035] and section
+follow the rules outlined in Section 2.3.1 of [@!RFC1035] and Section
 2.1 of [@!RFC1123].
 
 ## The SOA MNAME MUST be a legal hostname
 
 The SOA MNAME field is a hostname. The SOA MNAME field is defined
-in section 3.3.13 of [@RFC1035]. As a
+in Section 3.3.13 of [@RFC1035]. As a
 field containing a domain name, the content of the RNAME field MUST
-follow the rules outlined in section 2.3.1 of [@!RFC1035].
+follow the rules outlined in Section 2.3.1 of [@!RFC1035].
 
-Furthermore, section 7.3 in [@RFC2181] makes it clear that the SOA MNAME
+Furthermore, Section 7.3 in [@RFC2181] makes it clear that the SOA MNAME
 field SHOULD NOT be the name of the zone itself.
 
 ## The MX record in apex MUST point to a valid hostname
 
 The requirement on the existence of an MX RR in the apex of the child
 zone may vary by policy from different parent zones. However, It is
-strongly recommended in section 7 of [@RFC2142] that all domains should
+strongly recommended in Section 7 of [@RFC2142] that all domains should
 have a mailbox named hostmaster@domain. SMTP can make a delivery without
-the MX, using the A or AAAA record as specified in section 5.1 of
+the MX, using the A or AAAA record as specified in Section 5.1 of
 [@RFC5321].
 
 If an MX RR exists in the apex of the child zone, the hostname that
-the MX RR points to MUST follow the rules outlined in section 2.3.1
-of [@!RFC1035] and section 2.1 of [@!RFC1123].
+the MX RR points to MUST follow the rules outlined in Section 2.3.1
+of [@!RFC1035] and Section 2.1 of [@!RFC1123].
 
 # Zone requirements
 
@@ -408,7 +408,7 @@ Some text about Zone.
 
 ## SOA MNAME SHOULD point A or AAAA
 
-The SOA MNAME field is defined in section 3.3.13 of [@RFC1035].
+The SOA MNAME field is defined in Section 3.3.13 of [@RFC1035].
 
 ## SOA MNAME must be an NS of the zone
 ## SOA REFRESH should to be too low
@@ -421,10 +421,10 @@ The SOA MNAME field is defined in section 3.3.13 of [@RFC1035].
 ## MX record in apex MUST point to A or AAAA
 
 If an MX RR exists in the apex of the child zone the MX RR MUST point
-to a label that follows the rules defined in section 2.3.1 of [@!RFC1035].
+to a label that follows the rules defined in Section 2.3.1 of [@!RFC1035].
 
 That name must also not be an alias (CNAME or DNAME) but MUST resolve
-directly to an A or AAAA RR, as specified in section 10.3 in [@!RFC2821].
+directly to an A or AAAA RR, as specified in Section 10.3 in [@!RFC2821].
 
 # Security Considerations
 
