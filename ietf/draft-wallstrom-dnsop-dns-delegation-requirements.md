@@ -86,14 +86,14 @@ these properties, the rest of the requirements are irrelevant.
 
 ## The domain name MUST be valid
 
-The domain name MUST follow the rules defined in Section 2.3.1 of [@RFC1123] in
+The domain name MUST follow the rules defined in Section 2.3.1 of [@!RFC1123] in
 order to be able to map the domain into a DNS packet. A domain name is normally
 valid if the name has been registered with a domain name registry.
 
 ## The domain MUST have a parent domain
 
 A DNS delegation MUST have a parent domain from which it is delegated. The
-concept of zone cuts was first described in [@RFC1034] and later clarified in
+concept of zone cuts was first described in [@!RFC1034] and later clarified in
 Section 6 of [@RFC2182]. The only exception is the root zone, which do not have
 a parent zone.
    
@@ -156,12 +156,12 @@ TODO: Some text about connectivity.
 ## All name servers MUST have UDP connectivity over port 53
 
 DNS queries are sent using UDP on port 53, as described in Section 4.2.1 of
-[@RFC1035]. A name server MUST respond to DNS queries over UDP.
+[@!RFC1035]. A name server MUST respond to DNS queries over UDP.
 
 ## All name servers MUST have TCP connectivity over port 53
 
 In addition to UDP, DNS queries can also be sent using TCP on port 53, as
-described in Section 4.2.2 of [@RFC1035]. A name server MUST respond to DNS
+described in Section 4.2.2 of [@!RFC1035]. A name server MUST respond to DNS
 queries over TCP. This requirement has also been further clarified in
 [@RFC5966], which makes TCP a REQUIRED part of a full DNS protocol
 implementation.
@@ -206,12 +206,12 @@ An indication that not all authoritative name servers have a consistent
 and updated copy of the zone is that the serial numbers differ. When quering
 for the SOA RR all name servers SHOULD respond with the same serial record.
 
-Section 4.3.5 in [@RFC1034] explains the typical function of the serial
+Section 4.3.5 in [@!RFC1034] explains the typical function of the serial
 numbers in zone Maintenance and transfers.
 
 ## All name servers SHOULD respond with the same SOA RNAME
 
-As per Section 3.3.13 of [@RFC1035], the RNAME field in the SOA RDATA refers
+As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
 to the personal contect for the zone. An indication that not all
 authoritative name servers have a consistent and updated copy of the zone
 is that the RNAME differs. When quering for the SOA RR all name servers
@@ -221,7 +221,7 @@ SHOULD respond with the same serial record.
 
 The inconsistency of the SOA parameters REFRESH, RETRY, EXPIRE
 and MINIMUM might lead to operational problems for the zone. The fields are
-defined in Section 3.3.13 of [@RFC1035]. These SOA parameters SHOULD be
+defined in Section 3.3.13 of [@!RFC1035]. These SOA parameters SHOULD be
 consistent for all authoritative name servers for the zone.
 
 ## All name servers MUST respond with the same NS RR Set
@@ -241,7 +241,7 @@ are operational considerations to ensure this.
 
 ## The delegation SHOULD contain at least two name servers
 
-Section 4.1 [@RFC1034] states that by administrative fiat we require
+Section 4.1 [@!RFC1034] states that by administrative fiat we require
 every zone to be available on at least two name servers. Section 5
 of [@RFC2182] that answers the question on how many name servers are
 needed, the recommendation is that "three servers be provided for most
@@ -381,7 +381,7 @@ Section 11 in [@!RFC2182] and Section 2 and 5 in [@RFC3696].
 ## The SOA RNAME MUST not contain the '@' character
 
 The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in Section 3.3 of [@RFC1034] and Section 2.2 of [@RFC1912]. The RNAME
+in Section 3.3 of [@!RFC1034] and Section 2.2 of [@RFC1912]. The RNAME
 field MUST follow the rules of an e-mail address defined in Section
 3.4.1 of [@!RFC2822], and the '@' character MUST be changed so that
 the whole e-mail address is converted into a single domain name as
@@ -390,7 +390,7 @@ described in Section 3.3 of [@!RFC1034] and Section 2.1 of [@!RFC1123].
 ## The SOA RNAME MUST be a legal hostname
 
 The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in Section 3.3 of [@RFC1034] and Section 2.2 of [@RFC1912]. As a
+in Section 3.3 of [@!RFC1034] and Section 2.2 of [@RFC1912]. As a
 field containing a domain name, the content of the RNAME field MUST
 follow the rules outlined in Section 2.3.1 of [@!RFC1035] and Section
 2.1 of [@!RFC1123].
@@ -398,7 +398,7 @@ follow the rules outlined in Section 2.3.1 of [@!RFC1035] and Section
 ## The SOA MNAME MUST be a legal hostname
 
 The SOA MNAME field is a hostname. The SOA MNAME field is defined
-in Section 3.3.13 of [@RFC1035]. As a
+in Section 3.3.13 of [@!RFC1035]. As a
 field containing a domain name, the content of the RNAME field MUST
 follow the rules outlined in Section 2.3.1 of [@!RFC1035].
 
@@ -424,7 +424,7 @@ Some text about Zone.
 
 ## SOA MNAME SHOULD point A or AAAA
 
-The SOA MNAME field is defined in Section 3.3.13 of [@RFC1035].
+The SOA MNAME field is defined in Section 3.3.13 of [@!RFC1035].
 
 ## SOA MNAME must be an NS of the zone
 ## SOA REFRESH should to be too low
