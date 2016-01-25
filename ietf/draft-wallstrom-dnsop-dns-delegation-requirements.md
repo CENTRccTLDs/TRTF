@@ -356,8 +356,15 @@ The number of NSEC3 iterations MUST NOT be higher than what is allowed by
 Section 10.3 of [RFC5155]. It should be noted that the values in the table MUST
 be used independent of the key algorithm.
 
+## RRSIG validity period neither SHOULD not be too short nor too long
 
-## RRSIG lifetimes neither must not be too short nor too long
+[@RFC6781] describes operational considerations on the choice of validity
+periods for RRSIGs. Having too short validity periods might cause
+operational failure in case of unexpected events, but is good for
+protecting against replay attacks. Having too long validity periods may
+be good for operational security, but opens up for replay attacks.
+
+The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
 ## The name server must include RRSIG in all responses to DNSSEC queries
 
