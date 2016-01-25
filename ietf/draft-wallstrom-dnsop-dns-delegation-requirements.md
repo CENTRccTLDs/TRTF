@@ -58,7 +58,6 @@ differentiate between what they are for:
  6. DNSSEC
  7. Name server
  8. Syntax
- 9. Zone
 
 TODO: a secondary name server operator should follow the advice in the BCP
 document [@!RFC2182].
@@ -461,30 +460,6 @@ record as specified in Section 5.1 of [@RFC5321].
 If an MX RR exists in the apex of the child zone, the hostname that
 the MX RR points to MUST follow the rules outlined in Section 2.3.1
 of [@!RFC1035] and Section 2.1 of [@!RFC1123].
-
-
-# Zone requirements
-
-Some text about Zone.
-
-## SOA MNAME SHOULD point A or AAAA
-
-The SOA MNAME field is defined in Section 3.3.13 of [@!RFC1035].
-
-## SOA REFRESH should to be too low
-## SOA RETRY must be lower than 'refresh'
-## SOA RETRY should to be too low
-## SOA EXPIRE should to be too low
-## SOA 'expire' should to be lower than 'refresh'
-## SOA 'minimum' should to be too high
-## SOA 'minimum' should to be too low
-## MX record in apex MUST point to A or AAAA
-
-If an MX RR exists in the apex of the child zone the MX RR MUST point
-to a label that follows the rules defined in Section 2.3.1 of [@!RFC1035].
-
-That name must also not be an alias (CNAME or DNAME) but MUST resolve
-directly to an A or AAAA RR, as specified in Section 10.3 in [@!RFC2821].
 
 
 # Security Considerations
