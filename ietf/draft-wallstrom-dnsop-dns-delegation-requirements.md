@@ -303,6 +303,17 @@ the in-bailiwick glue for the name servers in the child.
 If the glue address mismatch between the server and the child, this
 is a strong indication of configuration error.
 
+## SOA MNAME MUST be authoritative for the zone
+
+The hostname of the MNAME field may or may not be listed among the delegated
+name servers, but SHOULD still be authoritative for the zone. MNAME may be used
+for other services, e.g., DNS NOTIFY [RFC1996] and DNS Dynamic Updates
+[RFC2136].
+
+It should be noted that there are no formal requirement that the name server
+listed in the SOA MNAME is reachable from the public Internet. Because of this,
+it may be difficult to implement a reasonable test for this requirement.
+
 
 # DNSSEC requirements
 
@@ -459,18 +470,6 @@ Some text about Zone.
 ## SOA MNAME SHOULD point A or AAAA
 
 The SOA MNAME field is defined in Section 3.3.13 of [@!RFC1035].
-
-## SOA MNAME MUST be authoritative for the zone
-
-The hostname of the MNAME field may or may not be listed among the delegated
-name servers, but SHOULD still be authoritative for the zone. MNAME may be used
-for other services, e.g., DNS NOTIFY [RFC1996] and DNS Dynamic Updates
-[RFC2136].
-
-It should be noted that there are no formal requirement that the name server
-listed in the SOA MNAME is reachable from the public Internet. Because of this,
-it may be difficult to implement a reasonable test for this requirement.
-
 
 ## SOA REFRESH should to be too low
 ## SOA RETRY must be lower than 'refresh'
