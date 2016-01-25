@@ -190,15 +190,14 @@ placed within a single routing domain, or AS (autonomous system).
 
 # Consistency requirements
 
-For DNS resolver behaviour to be consistent for a domain, it is important
-that the authoritative data for the domain to be consistent. All name servers
+For DNS resolver behaviour to be consistent for a domain, it is important that
+the authoritative data for the domain to be consistent. All name servers
 authoritative domain should serve the same data. An indicator of operator
-failure is that the SOA record differs, and the NS RR set differs between
-the authoratitative name servers.
+failure is that the SOA record or the NS RR set differs between the
+authoratitative name servers.
 
-Section 4.6 in [@RFC4786] advices that data synchronisation in an anycast
-setup should be done in a manner so that anycast nodes operate in a
-consistent manner.
+Section 4.6 in [@RFC4786] advices that data synchronisation in an anycast setup
+should be done in a manner so that anycast nodes operate in a consistent manner.
 
 ## All name servers SHOULD respond with the same SOA serial number
 
@@ -212,7 +211,7 @@ numbers in zone Maintenance and transfers.
 ## All name servers SHOULD respond with the same SOA RNAME
 
 As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
-to the personal contect for the zone. An indication that not all
+to theq personal contect for the zone. An indication that not all
 authoritative name servers have a consistent and updated copy of the zone
 is that the RNAME differs. When quering for the SOA RR all name servers
 SHOULD respond with the same serial record.
