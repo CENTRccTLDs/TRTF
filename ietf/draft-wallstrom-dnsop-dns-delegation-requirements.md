@@ -346,7 +346,16 @@ published at the parent, there MUST be at least one DNSKEY RR in the child
 zone that matches the DS RR, otherwise the authentication of the referral
 will fail, as described in section 5.2 of [@!RFC4035].
 
-## The number of NSEC3 iterations must to be higher than what is allowed
+## The number of NSEC3 iterations must not be higher than what is allowed
+
+Section 10.3 of [RFC5155] specifies the max number of NSEC3 iterations allowed
+for different key sizes. This requirement is enforced by several resolver
+implementations.
+
+The number of NSEC3 iterations MUST NOT be higher than what is allowed by
+Section 10.3 of [RFC5155]. It should be noted that the values in the table MUST
+be used independent of the key algorithm.
+
 
 ## RRSIG lifetimes neither must not be too short nor too long
 
