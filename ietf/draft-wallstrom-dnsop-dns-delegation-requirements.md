@@ -329,7 +329,7 @@ in [@RFC5155], and a number of algorithms to the cryptographic functions.
 ## The DS Digest Type MUST be assigned by IANA
 
 The The Digest Type Field is defined as part of the DS RDATA Wire Format
-of section 5.1.3 in [@RFC4034]. The appendix A.2 defines the defined
+of Section 5.1.3 in [@RFC4034]. The appendix A.2 defines the defined
 digest algorithm types with possible future algorithms. The IANA registry
 for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658].
 
@@ -337,7 +337,7 @@ Any DS RR used for the zone MUST be assigned by IANA.
 
 ## The DNSKEY algorithm must be one of the ones assigned by IANA
 
-The DNSKEY RR is defined in section 2 of [@RFC4034] as part of the DNSKEY
+The DNSKEY RR is defined in Section 2 of [@RFC4034] as part of the DNSKEY
 RDATA Wire Format. The appendix A.1 defines the initial list of DNSKEY
 Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
 [@IANA-DNSSEC-DNSKEY] was created with [@RFC3755].
@@ -350,11 +350,11 @@ DNS delegations from a parent to a child are secured with DNSSEC by
 publishing one or several delegation Signer (DS) records in the parent
 zone, along with the NS records for the delegation.
 
-As stated in section 2.4 of [@!RFC4035], a DS RR SHOULD point to a DNSKEY
+As stated in Section 2.4 of [@!RFC4035], a DS RR SHOULD point to a DNSKEY
 RR that is present in the child's apex DNSKEY RRset. If there is a DS RR
 published at the parent, there MUST be at least one DNSKEY RR in the child
 zone that matches the DS RR, otherwise the authentication of the referral
-will fail, as described in section 5.2 of [@!RFC4035].
+will fail, as described in Section 5.2 of [@!RFC4035].
 
 ## The number of NSEC3 iterations must not be higher than what is allowed
 
