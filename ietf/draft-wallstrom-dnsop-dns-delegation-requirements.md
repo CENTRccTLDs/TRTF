@@ -341,7 +341,7 @@ RDATA Wire Format. The appendix A.1 defines the initial list of DNSKEY
 Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
 [@IANA-DNSSEC-DNSKEY] was created with [@RFC3755].
 
-Any DNSKEY algorithm number present in a zone MUST be assigned by IANA.
+Any DNSKEY algorithm number used for in a zone MUST be assigned by IANA.
 
 ## One DS MUST match a least one DNSKEY in the child zone
 
@@ -375,12 +375,6 @@ be good for operational security, but opens up for replay attacks.
 
 The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
-## The name server must include RRSIG in all responses to DNSSEC queries
-
-If the zone is signed, the name servers MUST be able to include RRSIG RRs
-as additional data in any response when the query has the DO bit set, as
-described in Section 3.1.1 of [@!RFC4035].
-
 ## If child zone includes DNSKEY then parent zone should have DS
 
 https://tools.ietf.org/html/rfc4035#section-3.1.4
@@ -389,7 +383,17 @@ https://tools.ietf.org/html/rfc4035#section-3.1.4
 
 ## RRSIG of SOA must be valid and must be created by a valid DNSKEY
 
+## The name server must include RRSIG in all responses to DNSSEC queries
+
+If the zone is signed, the name servers MUST be able to include RRSIG RRs
+as additional data in any response when the query has the DO bit set, as
+described in Section 3.1.1 of [@!RFC4035].
+
 ## The name servers must include valid NSEC/NSEC3 record in NXDOMAIN responses
+
+If the zone is signed, the name servers MUST be able to include NSEC/NSEC3 RRs
+as additional data in any response when the query has the DO bit set, as
+described in Section 3.1.1 of [@!RFC4035].
 
 ## Delegation from parent to child must be properly signed
 
