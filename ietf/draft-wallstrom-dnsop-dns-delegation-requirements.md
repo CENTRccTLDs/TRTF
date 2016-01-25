@@ -146,7 +146,7 @@ Martians [@RFC1208] is a humorous term applied to packets that turn up
 unexpectedly on the wrong network because of bogus routing entries. Bogons
 [@RFC3871] are packets sourced from addresses that have not yet been allocated
 by IANA or a RIR, or not delegated to a RIR by IANA as described above.
-Martians and Bogons SHOULD not be used as an addressed used by a name server.
+Martians and Bogons SHOULD NOT be used as an addressed used by a name server.
 
 
 #  Connectivity requirements
@@ -184,7 +184,7 @@ disabling all of them. Further support for this is given in Section 5:
 > organisation level zones, with at least one which must be well
 > removed from the others.
 
-To avoid any single point of failure in routing, all name servers SHOULD not be
+To avoid any single point of failure in routing, all name servers SHOULD NOT be
 placed within a single routing domain, or AS (autonomous system).
 
 
