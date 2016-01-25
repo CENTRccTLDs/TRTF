@@ -334,7 +334,17 @@ Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
 
 Any DNSKEY present in the zone MUST be assigned by IANA.
 
-## DS must match a DNSKEY in the child zone
+## One DS MUST match a least one DNSKEY in the child zone
+
+DNS delegations from a parent to a child are secured with DNSSEC by
+publishing one or several delegation Signer (DS) records in the parent
+zone, along with the NS records for the delegation.
+
+As stated in section 2.4 of [@!RFC4035], a DS RR SHOULD point to a DNSKEY
+RR that is present in the child's apex DNSKEY RRset. If there is a DS RR
+published at the parent, there MUST be at least one DNSKEY RR in the child
+zone that matches the DS RR, otherwise the authentication of the referral
+will fail, as described in section 5.2 of [@!RFC4035].
 
 ## The number of NSEC3 iterations must to be higher than what is allowed
 
@@ -343,6 +353,8 @@ Any DNSKEY present in the zone MUST be assigned by IANA.
 ## The name server must include RRSIG in all responses to DNSSEC queries
 
 ## If child zone includes DNSKEY then parent zone should have DS
+
+https://tools.ietf.org/html/rfc4035#section-3.1.4
 
 ## RRSIG of DNSKEY must be valid and must be created by a valid DNSKEY
 
