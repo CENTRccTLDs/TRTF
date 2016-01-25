@@ -426,7 +426,7 @@ characters, followed by two hyphens, where the two characters are not
 
 The Name Server name MUST be a valid hostname according to the rules
 defined in Section 2.3.1 of [@!RFC1035], in Section 2.1 in [RFC1123],
-Section 11 in [@!RFC2182] and Section 2 and 5 in [@RFC3696].
+Section 11 in [@!RFC2181] and Section 2 and 5 in [@RFC3696].
 
 ## The SOA RNAME MUST not contain the '@' character
 
