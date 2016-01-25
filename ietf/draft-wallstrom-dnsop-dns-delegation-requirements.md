@@ -106,7 +106,7 @@ queries in order to be able to serve authoritative data for the child zone.
 
 # Address requirements
 
-A delegation in the public internet DNS hierarchy will use the globally unique
+A delegation in the public Internet DNS hierarchy will use the globally unique
 address space.
 
 ## Name server address MUST be globally routable
