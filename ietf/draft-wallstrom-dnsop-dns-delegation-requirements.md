@@ -151,7 +151,7 @@ Martians and Bogons SHOULD not be used as an addressed used by a name server.
 
 #  Connectivity requirements
 
-Some text about connectivity.
+TODO: Some text about connectivity.
 
 ## All name servers MUST have UDP connectivity over port 53
 
@@ -160,10 +160,11 @@ DNS queries are sent using UDP on port 53, as described in Section 4.2.1 of
 
 ## All name servers MUST have TCP connectivity over port 53
 
-DNS queries can also be sent using TCP on port 53, as described in Section
-4.2.2 of [@RFC1035]. A name server MUST respond to DNS queries over TCP. This
-requirement has also been further clarified in [@RFC5966], which makes TCP a
-REQUIRED part of a full DNS protocol implementation.
+In addition to UDP, DNS queries can also be sent using TCP on port 53, as
+described in Section 4.2.2 of [@RFC1035]. A name server MUST respond to DNS
+queries over TCP. This requirement has also been further clarified in
+[@RFC5966], which makes TCP a REQUIRED part of a full DNS protocol
+implementation.
 
 ## The name servers SHOULD not be on the same AS
 
