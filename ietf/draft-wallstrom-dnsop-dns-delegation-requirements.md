@@ -40,8 +40,7 @@ resolvers behave consistently, there are a large number of things to consider.
 
 Based on this document, it should be possible to set up a fully functional DNS
 delegation for a domain, but also to create a set of test specifications for
-how to test a DNS delegation. It is typically for testing the Basic section
-(TODO: add in-document reference) is there.
+how to test a DNS delegation.
 
 {mainmatter}
 
@@ -368,7 +367,7 @@ section 11 in [@!RFC2182] and section 2 and 5 in [@RFC3696].
 The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
 in section 3.3 of [@RFC1034] and section 2.2 of [@RFC1912]. The RNAME
 field MUST follow the rules of an e-mail address defined in section
-3.4.1 of [@!RFC 2822], and the '@' character MUST be changed so that
+3.4.1 of [@!RFC2822], and the '@' character MUST be changed so that
 the whole e-mail address is converted into a single domain name as
 described in section 3.3 of [@!RFC1034] and section 2.1 of [@!RFC1123].
 
