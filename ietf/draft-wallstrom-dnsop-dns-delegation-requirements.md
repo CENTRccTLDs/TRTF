@@ -358,7 +358,7 @@ Any DNSKEY present in the zone MUST be assigned by IANA.
 All domain- and host names in DNS MUST follow the rules outlined in
 Section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label has been
 further clarified in Section 11 in [@RFC2181] and Section 2.3.1 in
-[@RFC5890]. From this follows the requirements below:
+[@RFC5890]. From this follows the requirements below.
 
 ## Illegal characters MUST NOT be in the domain name
 
@@ -368,6 +368,9 @@ domain name must follow the rules defined in Section 2.3.1 of
 and Section 2 of [@RFC3696].
 
 ## No hyphen must be at start or end of the domain name
+
+TODO.
+
 ## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
 
 The effort of internationaliztion of domain names and the development
@@ -385,43 +388,41 @@ Section 11 in [@!RFC2182] and Section 2 and 5 in [@RFC3696].
 
 ## The SOA RNAME MUST not contain the '@' character
 
-The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in Section 3.3 of [@!RFC1034] and Section 2.2 of [@RFC1912]. The RNAME
-field MUST follow the rules of an e-mail address defined in Section
-3.4.1 of [@!RFC2822], and the '@' character MUST be changed so that
-the whole e-mail address is converted into a single domain name as
-described in Section 3.3 of [@!RFC1034] and Section 2.1 of [@!RFC1123].
+The SOA RNAME field is a mailbox address defined in Section 3.3 of [@!RFC1034]
+and Section 2.2 of [@RFC1912]. The RNAME field MUST follow the rules of an
+e-mail address defined in Section 3.4.1 of [@!RFC2822], and the '@' character
+MUST be changed so that the whole e-mail address is converted into a single
+domain name as described in Section 3.3 of [@!RFC1034] and Section 2.1 of
+[@!RFC1123].
 
 ## The SOA RNAME MUST be a legal hostname
 
-The SOA RNAME field is a mailbox address. The SOA RNAME field is defined
-in Section 3.3 of [@!RFC1034] and Section 2.2 of [@RFC1912]. As a
-field containing a domain name, the content of the RNAME field MUST
-follow the rules outlined in Section 2.3.1 of [@!RFC1035] and Section
-2.1 of [@!RFC1123].
+The SOA RNAME field is a mailbox address. The SOA RNAME field is defined in
+Section 3.3 of [@!RFC1034] and Section 2.2 of [@RFC1912]. As a field containing
+a domain name, the content of the RNAME field MUST follow the rules outlined in
+Section 2.3.1 of [@!RFC1035] and Section 2.1 of [@!RFC1123].
 
 ## The SOA MNAME MUST be a legal hostname
 
-The SOA MNAME field is a hostname. The SOA MNAME field is defined
-in Section 3.3.13 of [@!RFC1035]. As a
-field containing a domain name, the content of the RNAME field MUST
-follow the rules outlined in Section 2.3.1 of [@!RFC1035].
+The SOA MNAME field is a hostname. The SOA MNAME field is defined in Section
+3.3.13 of [@!RFC1035]. As a field containing a domain name, the content of the
+RNAME field MUST follow the rules outlined in Section 2.3.1 of [@!RFC1035].
 
-Furthermore, Section 7.3 in [@RFC2181] makes it clear that the SOA MNAME
-field SHOULD NOT be the name of the zone itself.
+Furthermore, Section 7.3 in [@RFC2181] makes it clear that the SOA MNAME field
+SHOULD NOT be the name of the zone itself.
 
 ## The MX record in apex MUST point to a valid hostname
 
-The requirement on the existence of an MX RR in the apex of the child
-zone may vary by policy from different parent zones. However, It is
-strongly recommended in Section 7 of [@RFC2142] that all domains should
-have a mailbox named hostmaster@domain. SMTP can make a delivery without
-the MX, using the A or AAAA record as specified in Section 5.1 of
-[@RFC5321].
+The requirement on the existence of an MX RR in the apex of the child zone may
+vary by policy from different parent zones. However, it is strongly recommended
+in Section 7 of [@RFC2142] that all domains should have a mailbox named
+hostmaster@domain. SMTP can make a delivery without the MX, using the A or AAAA
+record as specified in Section 5.1 of [@RFC5321].
 
 If an MX RR exists in the apex of the child zone, the hostname that
 the MX RR points to MUST follow the rules outlined in Section 2.3.1
 of [@!RFC1035] and Section 2.1 of [@!RFC1123].
+
 
 # Zone requirements
 
