@@ -282,7 +282,7 @@ A name server that does not answer authoritatively for the zone is a
 clear sign of misconfiguration, and is a common cause for operational
 problems.
 
-Subsection 6.1 of [@RFC2181] mandates that the name servers MUST answer
+Section 6.1 of [@RFC2181] mandates that the name servers MUST answer
 authoritatively for the zone.
 
 ## The delegation name MUST exactly match the apex of the child zone
