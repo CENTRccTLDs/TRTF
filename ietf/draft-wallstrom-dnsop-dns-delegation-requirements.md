@@ -166,6 +166,13 @@ queries over TCP. This requirement has also been further clarified in
 [@RFC5966], which makes TCP a REQUIRED part of a full DNS protocol
 implementation.
 
+It should be noted that even though [@RFC5966] requires TCP for a DNS protocol
+implementation, it does not make specific recommendations to operators of DNS
+servers. However, it also notes that failure to support TCP (or the blocking of
+DNS over TCP at the network layer) may result in resolution failure and/or
+application-level timeouts.
+
+
 ## The name servers SHOULD not be on the same AS
 
 [@RFC2182], Section 3.1 states that distinct authoritative name servers for a
