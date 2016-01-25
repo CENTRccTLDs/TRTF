@@ -304,7 +304,13 @@ first introduced with the RFCs [@RFC4033], [@RFC4034] and [@RFC4035].
 The are also a number of additions to DNSSEC such as NSEC3 described
 in [@RFC5155], and a number of algorithms to the cryptographic functions.
 
-## The DS hash digest algorithm must be one of the ones assigned by IANA
+## The DS Digest Type MUST be assigned by IANA
+
+The The Digest Type Field is defined as part of the DS RDATA Wire Format
+of section 5.1.3 in [@RFC1034]. The appendix A.2 defines the defined
+digest algorithm types with possible future algorithms. The IANA registry
+for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658]. Any
+DS RR used for the zone MUST be assigned by IANA.
 
 ## The DNSKEY algorithm must be one of the ones assigned by IANA
 
