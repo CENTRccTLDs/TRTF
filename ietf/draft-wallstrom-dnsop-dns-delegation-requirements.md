@@ -217,10 +217,10 @@ result in limited inconsistency.
 ## All name servers SHOULD respond with the same SOA RNAME
 
 As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
-to theq personal contect for the zone. An indication that not all
-authoritative name servers have a consistent and updated copy of the zone
-is that the RNAME differs. When quering for the SOA RR all name servers
-SHOULD respond with the same serial record.
+to the mailbox of the person responsible for the zone. An indication that not
+all authoritative name servers have a consistent and updated copy of the zone
+is that the RNAME differs. When quering for the SOA RR all name servers SHOULD
+respond with the same serial record.
 
 ## All name servers SHOULD respond with the same SOA parameters
 
