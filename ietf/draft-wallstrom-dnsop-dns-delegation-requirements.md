@@ -355,11 +355,12 @@ DNS delegations from a parent to a child are secured with DNSSEC by publishing
 one or several Delegation Signer (DS) resource records in the parent zone,
 along with the NS records for the delegation.
 
-As stated in Section 2.4 of [@!RFC4035], a DS RR SHOULD point to a DNSKEY
-RR that is present in the child's apex DNSKEY RRset. If there is a DS RR
-published at the parent, there MUST be at least one DNSKEY RR in the child
-zone that matches the DS RR, otherwise the authentication of the referral
-will fail, as described in Section 5.2 of [@!RFC4035].
+As stated in Section 2.4 of [@!RFC4035], a DS RR SHOULD point to a DNSKEY RR
+that is present in the child's apex DNSKEY RRset. If there is a DS RR published
+at the parent, there MUST be at least one DNSKEY RR in the child zone that
+matches at least one DS RR for every signature algorithm, otherwise the
+authentication of the referral will fail, as described in Section 5.2 of
+[@!RFC4035].
 
 ## The number of NSEC3 iterations must not be higher than what is allowed
 
