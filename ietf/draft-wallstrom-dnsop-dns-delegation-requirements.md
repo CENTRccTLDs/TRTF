@@ -208,6 +208,12 @@ for the SOA RR all name servers SHOULD respond with the same serial record.
 Section 4.3.5 in [@!RFC1034] explains the typical function of the serial
 numbers in zone Maintenance and transfers.
 
+One should note that even though different SOA serial numbers are a strong
+indicator of an inconsistent setup, there are several scenarios where the
+serial number vary between name servers. One example is a zone with frequent
+updates to zone data, where propagation delay between the name servers may
+result in limited inconsistency.
+
 ## All name servers SHOULD respond with the same SOA RNAME
 
 As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
