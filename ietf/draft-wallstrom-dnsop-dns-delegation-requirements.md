@@ -383,7 +383,8 @@ matches at least one DS RR for every signature algorithm, otherwise the
 authentication of the referral will fail, as described in Section 5.2 of
 [@!RFC4035].
 
-TODO: for each algorithm
+For each unique algorithm from the DS RRs present, there MUST be a
+matching DNSKEY using that algorithm in use in the child.
 
 ## The number of NSEC3 iterations must not be higher than what is allowed
 
