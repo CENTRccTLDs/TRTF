@@ -498,7 +498,8 @@ This document has no IANA actions.
 # Acknowledgements
 
 The requirements documented in this document was developed within the CENTR
-Test Requirements Task Force (TRTF).
+Test Requirements Task Force (TRTF). Most of the original requirements and
+text come from the Zonemaster project.
 
 
 <!-- reference we need to include -->
