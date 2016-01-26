@@ -367,7 +367,7 @@ Any DNSKEY algorithm number used for in a zone MUST be assigned by IANA.
 ## Chain of trust of delegation
 
 A valid authentication chain from the parent DS, as described in Section 3.1 of
-[@RFC4033], MUST existing for the SOA, DNSKEY and NS records of the child zone
+[@RFC4033], MUST exist for the SOA, DNSKEY and NS records of the child zone
 if a DS record is published in the parent zone.
 
 ## One DS MUST match a least one DNSKEY in the child zone
