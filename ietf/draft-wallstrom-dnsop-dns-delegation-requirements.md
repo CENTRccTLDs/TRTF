@@ -163,7 +163,15 @@ Martians and Bogons SHOULD NOT be used as an addressed used by a name server.
 
 #  Connectivity requirements
 
-TODO: Some text about connectivity.
+The use of underlying protocols for DNS is described in Section 4.2 of
+[@RFC1035].
+
+The Internet supports name server access using TCP [@RFC793] on server
+port 53 (decimal) as well as datagram access using UDP [@RFC768] on UDP
+port 53 (decimal). Today DNS is used in conjunction with both IPv4 and IPv6,
+
+Name servers configured for a zone in a delegation MUST be able to answer
+queries using the DNS protocol.
 
 ## All name servers MUST have UDP connectivity over port 53
 
