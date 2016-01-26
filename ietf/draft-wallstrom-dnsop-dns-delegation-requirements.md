@@ -47,6 +47,19 @@ how to test a DNS delegation.
 
 # Introduction
 
+This document outlines a set of requirements on a well-behaved DNS delegation
+of a domain name. Many domain name registries use a set of requirements on
+what they may consider a valid delegation. Such requirements can be used to
+implement tools that are used for pre- or post-delegation checks of the
+delegations in that registry.
+
+To test the quality of the delegation there has been a number of different
+tools developed, each based on a different set of requirements. This
+document documents a set of baseline requirements on a correct setup for
+a delegated domain name. This document is based on current RFCs and
+documents requirements that are protocol specific, but also administrative
+policy requirements drawn from best practices and recommendations.
+
 The requirements are split into these different areas, to easier
 differentiate between what they are for:
 
@@ -59,8 +72,8 @@ differentiate between what they are for:
  7. Name server
  8. Syntax
 
-TODO: a secondary name server operator should follow the advice in the BCP
-document [@!RFC2182].
+A secondary name server operator should follow the advice in the BCP document
+[@!RFC2182].
 
 ## DNS Terminology
 
@@ -361,6 +374,8 @@ at the parent, there MUST be at least one DNSKEY RR in the child zone that
 matches at least one DS RR for every signature algorithm, otherwise the
 authentication of the referral will fail, as described in Section 5.2 of
 [@!RFC4035].
+
+TODO: for each algorithm
 
 ## The number of NSEC3 iterations must not be higher than what is allowed
 
