@@ -432,10 +432,6 @@ domain name must follow the rules defined in Section 2.3.1 of
 [@!RFC1035], Section 2.1 of [@!RFC1123], Section 11 of [@!RFC2182]
 and Section 2 of [@RFC3696].
 
-## No hyphen must be at start or end of the domain name
-
-TODO.
-
 ## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
 
 The effort of internationaliztion of domain names and the development
