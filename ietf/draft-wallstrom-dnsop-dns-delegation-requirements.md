@@ -102,6 +102,11 @@ The domain name MUST follow the rules defined in Section 2.3.1 of [@!RFC1123] in
 order to be able to map the domain into a DNS packet. A domain name is normally
 valid if the name has been registered with a domain name registry.
 
+Internationalized domain names, [@RFC5891], are expected to be encoded using
+Punycode [@RFC3492], thus following the rules outlined in Section 2.3.1 of
+[@!RFC1035]. Any validation of the domain name in U-label form is out of scope
+for this document.
+
 ## The domain MUST have a parent domain
 
 A DNS delegation MUST have a parent domain from which it is delegated. The
