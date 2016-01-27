@@ -98,7 +98,7 @@ these properties, the rest of the requirements are irrelevant.
 
 ## The domain name MUST be valid
 
-The domain name MUST follow the rules defined in Section 2.3.1 of [@!RFC1123] in
+The domain name MUST follow the rules defined in Section 2.1 of [@!RFC1123] in
 order to be able to map the domain into a DNS packet. A domain name is normally
 valid if the name has been registered with a domain name registry.
 
