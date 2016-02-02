@@ -31,16 +31,16 @@
 .# Abstract
 
 This document outlines a set of requirements on a well-behaved DNS delegation
-of a domain name. A large number of tools has been developed to test DNS
-delegations, but all tools uses a different set of requirements for what is a
+of a domain name. A large number of tools have been developed to test DNS
+delegations, but each tool uses a different set of requirements for what is a
 correct setup for a delegated domain name. However, there are few requirements
 on how to set up DNS in order to just make the delegation work. In order to
-have a well-behaved delegation that is robust to failures and also make DNS
+have a well-behaved delegation that is robust to failures and also makes DNS
 resolvers behave consistently, there are a large number of things to consider.
 
 Based on this document, it should be possible to set up a fully functional DNS
-delegation for a domain, but also to create a set of test specifications for
-how to test a DNS delegation.
+delegation for a domain name, but also to create a set of test specifications
+for how to test a DNS delegation.
 
 {mainmatter}
 
@@ -55,7 +55,7 @@ delegations in that registry.
 
 To test the quality of the delegation there has been a number of different
 tools developed, each based on a different set of requirements. This
-document documents a set of baseline requirements on a correct setup for
+document outlines a set of baseline requirements on a correct setup for
 a delegated domain name. This document is based on current RFCs and
 documents requirements that are protocol specific, but also administrative
 policy requirements drawn from best practices and recommendations.
@@ -80,7 +80,7 @@ A secondary name server operator should follow the advice in the BCP document
 This document attempts to fully follow the DNS terminology as defined in
 [@!RFC7719].
 
-Many requirements in this document deals with the properties of a nameserver
+Many requirements in this document deal with the properties of a nameserver
 that is used as part of a delegation, therefore the wording mentioning the use
 of a name server as part of this is omitted.
 
@@ -116,9 +116,9 @@ a parent zone.
    
 ## The domain MUST have at least one working name server
 
-A fully working DNS delegation have a parent zone delegating the zone to a set
+A fully working DNS delegation has a parent zone delegating the zone to a set
 of child name servers. At least one name server MUST be able to answer DNS
-queries in order to be able to serve authoritative data for the child zone.
+queries in order to be able to authoritatively serve data for the child zone.
 
 
 # Address requirements
@@ -140,17 +140,17 @@ Address Registry.
 
 [@RFC6890] instructs IANA on how to structure the IPv4 and IPv6 Special-Purpose
 Address Registries. The registries [@IANA-IPv4-Special] and
-[@IANA-IPv6-Special] are maintained by IANA, and is also described in Section
+[@IANA-IPv6-Special] are maintained by IANA, and are also described in Section
 2.2 and 2.3 of [@RFC7249].
 
-A name server MUST NOT be using any IP address out of any of these registries
+A name server MUST NOT be using any IP address within any of these registries
 that are marked with False in the Global column.
 
 ## The IP address of a name server MUST be delegated by IANA
 
-IP addresses not delegated by IANA MUST NOT be used as an addressed used by a
-name server. Thus, IP addresses within a prefix not delegated to a RIR by IANA
-MUST be rejected.
+IP addresses not delegated by IANA MUST NOT be used used by a name server.
+Thus, IP addresses within a prefix not delegated to a RIR by IANA MUST be
+rejected.
 
 The IANA registry [@IANA-IPv6-Unicast] SHOULD be used to determine the status of
 an IPv6 prefix. Only prefixes with the status ALLOCATED are allowed.
@@ -201,10 +201,10 @@ application-level timeouts.
 # Consistency requirements
 
 For DNS resolver behaviour to be consistent for a domain, it is important that
-the authoritative data for the domain to be consistent. All name servers
-authoritative domain should serve the same data. An indicator of operator
+the authoritative data for the domain to be consistent. All authoritative
+name servers for a zone should serve the same data. An indicator of operator
 failure is that the SOA record or the NS RR set differs between the
-authoratitative name servers.
+authoritative name servers.
 
 Section 4.6 in [@RFC4786] advices that data synchronisation in an anycast setup
 should be done in a manner so that anycast nodes operate in a consistent manner.
@@ -212,15 +212,15 @@ should be done in a manner so that anycast nodes operate in a consistent manner.
 ## All name servers SHOULD respond with the same SOA serial number
 
 An indication that not all authoritative name servers have a consistent
-and updated copy of the zone is that the serial numbers differ. When quering
-for the SOA RR all name servers SHOULD respond with the same serial record.
+and updated copy of the zone is that the serial numbers differ. When querying
+for the SOA RR all name servers SHOULD respond with the same SOA serial number.
 
 Section 4.3.5 in [@!RFC1034] explains the typical function of the serial
-numbers in zone Maintenance and transfers.
+numbers in zone maintenance and transfers.
 
 One should note that even though different SOA serial numbers are a strong
 indicator of an inconsistent setup, there are several scenarios where the
-serial number vary between name servers. One example is a zone with frequent
+serial number varies between name servers. One example is a zone with frequent
 updates to zone data, where propagation delay between the name servers may
 result in limited inconsistency.
 
@@ -229,7 +229,7 @@ result in limited inconsistency.
 As per Section 3.3.13 of [@!RFC1035], the RNAME field in the SOA RDATA refers
 to the mailbox of the person responsible for the zone. An indication that not
 all authoritative name servers have a consistent and updated copy of the zone
-is that the RNAME differs. When quering for the SOA RR all name servers SHOULD
+is that the RNAME differs. When querying for the SOA RR all name servers SHOULD
 respond with the same SOA RNAME.
 
 ## All name servers SHOULD respond with the same SOA parameters
@@ -243,7 +243,7 @@ name servers for the zone.
 
 All authoritative name servers MUST serve the same NS record set in
 order to ensure consistency in the zone cut as described in Section
-4.2.2 of [!@RFC1034]. Any inconsistency of NS records descibed in Section
+4.2.2 of [!@RFC1034]. Any inconsistency of NS records described in Section
 3.3.11 of RFC 1035 might result in operational failures.
 
 
@@ -251,7 +251,7 @@ order to ensure consistency in the zone cut as described in Section
 
 [@RFC2182] is a BCP on how to select and operate secondary name servers,
 and summarize many operational issues with the delegation of a zone.
-For a delegation to work continously if one component fails, there
+For a delegation to work continuously if one component fails, there
 are operational considerations to ensure this.
 
 ## The delegation SHOULD contain at least two name servers
@@ -288,7 +288,7 @@ name servers is to create two (2) names with the same IP address.
 To avoid any operational errors and workaround such as this, all
 name servers used for the zone MUST use distinct IP addresses.
 
-## The referral SHOULD fit into an non-truncated 512 byte UDP packet
+## The referral SHOULD fit into a non-truncated 512 byte UDP packet
 
 The DNS still defaults to using UDP, although efforts into requiring
 or transitioning to use TCP have come a long way. The UDP packet limit
@@ -300,7 +300,7 @@ To avoid any such problems with the delegation, and to avoid any
 unexpected truncation of a referral response, the referral containing
 the delegation from the parent SHOULD fit within 512 bytes.
 
-## All name servers MUST be authoritative for the domain
+## All name servers MUST be authoritative for the domain name
 
 A name server that does not answer authoritatively for the zone is a
 clear sign of misconfiguration, and is a common cause for operational
@@ -324,7 +324,7 @@ be present and match the name of the zone.
 In-bailiwick glue for name servers listed at the parent SHOULD match
 the in-bailiwick glue for the name servers in the child.
 
-If the glue address mismatch between the server and the child, this
+If the glue address mismatch between the parent zone and the child, this
 is a strong indication of configuration error.
 
 ## SOA MNAME MUST be authoritative for the zone
@@ -354,7 +354,7 @@ in [@RFC5155], and a number of algorithms to the cryptographic functions.
 ## The DS Digest Type MUST be assigned by IANA
 
 The The Digest Type Field is defined as part of the DS RDATA Wire Format
-of Section 5.1.3 in [@RFC4034]. The appendix A.2 defines the defined
+of Section 5.1.3 in [@RFC4034]. The appendix A.2 defines the initial set of
 digest algorithm types with possible future algorithms. The IANA registry
 for DS Digest Types [@IANA-DNSSEC-DS] was defined by [@RFC3658].
 
@@ -369,7 +369,7 @@ Algorithm Types. The IANA Registry for DNSKEY Algorithm Types
 
 Any DNSKEY algorithm number used for in a zone MUST be assigned by IANA.
 
-## Chain of trust of delegation
+## The chain of trust for the delegation MUST be valid
 
 A valid authentication chain from the parent DS, as described in Section 3.1 of
 [@RFC4033], MUST exist for the SOA, DNSKEY and NS records of the child zone
@@ -401,7 +401,7 @@ The number of NSEC3 iterations MUST NOT be higher than what is allowed by
 Section 10.3 of [RFC5155]. It should be noted that the values in the table MUST
 be used independent of the key algorithm.
 
-## RRSIG validity period neither SHOULD NOT be too short nor too long
+## RRSIG validity period SHOULD NOT be too short nor too long
 
 [@RFC6781] describes operational considerations on the choice of validity
 periods for RRSIGs. Having too short validity periods might cause
@@ -411,13 +411,13 @@ be good for operational security, but opens up for replay attacks.
 
 The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
-## The name server must include RRSIG in all responses to DNSSEC queries
+## The name server MUST include RRSIG in all responses to DNSSEC queries
 
 If the zone is signed, the name servers MUST be able to include RRSIG RRs
 as additional data in any response when the query has the DO bit set, as
 described in Section 3.1.1 of [@!RFC4035].
 
-## The name servers must include valid NSEC/NSEC3 record in NXDOMAIN responses
+## The name servers MUST include valid NSEC/NSEC3 record in NXDOMAIN responses
 
 If the zone is signed, the name servers MUST be able to include NSEC/NSEC3 RRs
 as additional data in any response when the query has the DO bit set, as
@@ -427,20 +427,20 @@ described in Section 3.1.1 of [@!RFC4035].
 # Syntax requirements
 
 All domain- and host names in DNS MUST follow the rules outlined in
-Section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label has been
+Section 2.3.1 of [@!RFC1035]. The Name Syntax and LDH Label have been
 further clarified in Section 11 in [@RFC2181] and Section 2.3.1 in
-[@RFC5890]. From this follows the requirements below.
+[@RFC5890]. From this follow the requirements below.
 
 ## Illegal characters MUST NOT be in the domain name
 
 There MUST NOT be any illegal characters used in the domain name. The
-domain name must follow the rules defined in Section 2.3.1 of
+domain name MUST follow the rules defined in Section 2.3.1 of
 [@!RFC1035], Section 2.1 of [@!RFC1123], Section 11 of [@!RFC2182]
 and Section 2 of [@RFC3696].
 
 ## Hyphens SHOULD NOT be in position 3 and 4 of the domain name
 
-The effort of internationaliztion of domain names and the development
+The effort of internationalization of domain names and the development
 of IDNA brought us the extension mechanism of using the string 'xn--'
 to have a special meaning. To allow future extensions to DNS there
 SHOULD be no instances of labels in the DNS that start with two
@@ -503,7 +503,7 @@ This document has no IANA actions.
 
 # Acknowledgements
 
-The requirements documented in this document was developed within the CENTR
+The requirements documented in this document were developed within the CENTR
 Test Requirements Task Force (TRTF). Most of the original requirements and
 text come from the Zonemaster project.
 
