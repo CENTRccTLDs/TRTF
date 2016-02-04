@@ -1,32 +1,32 @@
-% Title = "DNS Delegation Requirements"
-% abbrev = "DNS Delegation Requirements"
-% category = "info"
-% docName = "draft-wallstrom-dnsop-dns-delegation-requirements-00"
-% ipr= "trust200902"
-% area = "Internet"
-% workgroup = "DNSOP"
-%
-% date = 2016-01-26T14:00:00Z
-%
-% [[author]]
-% initials="P."
-% surname="Wallstrom"
-% fullname="Patrik Wallstrom"
-% organization="IIS"
-%     [author.address]
-%     email="pawal@iis.se"
-%     phone="+46-733-173956"
-%     [author.address.postal]
-%     city="Stockholm"
-%     country="SE"
-%
-% [[author]]
-% initials="J."
-% surname="Schlyter"
-% fullname="Jakob Schlyter"
-% organization="Kirei AB"
-%     [author.address]
-%     email="jakob@kirei.se"
+%%%
+
+    Title = "DNS Delegation Requirements"
+    abbrev = "DNS Delegation Requirements"
+    category = "info"
+    docName = "draft-wallstrom-dnsop-dns-delegation-requirements-00"
+    ipr= "trust200902"
+    area = "Internet"
+    workgroup = "DNSOP"
+ 
+    date = 2016-01-26T14:00:00Z
+ 
+    [[author]]
+    initials="P."
+    surname="Wallstrom"
+    fullname="Patrik Wallstrom"
+    organization="IIS"
+        [author.address]
+        email="pawal@iis.se"
+ 
+    [[author]]
+    initials="J."
+    surname="Schlyter"
+    fullname="Jakob Schlyter"
+    organization="Kirei AB"
+        [author.address]
+        email="jakob@kirei.se"
+
+%%%
 
 .# Abstract
 
