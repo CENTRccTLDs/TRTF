@@ -327,7 +327,7 @@ the in-bailiwick glue for the name servers in the child.
 If the glue address mismatch between the parent zone and the child, this
 is a strong indication of configuration error.
 
-## SOA MNAME MUST be authoritative for the zone
+## SOA MNAME SHOULD be authoritative for the zone
 
 The hostname of the MNAME field may or may not be listed among the delegated
 name servers, but SHOULD still be authoritative for the zone. MNAME may be used
