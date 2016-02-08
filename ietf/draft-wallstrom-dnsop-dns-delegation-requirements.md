@@ -63,14 +63,14 @@ policy requirements drawn from best practices and recommendations.
 The requirements are split into these different areas, to easier
 differentiate between what they are for:
 
- 1. Basic
- 2. Address
- 3. Connectivity
- 4. Consistency
- 5. Delegation
- 6. DNSSEC
- 7. Name server
- 8. Syntax
+ - Basic
+ - Address
+ - Connectivity
+ - Consistency
+ - Delegation
+ - DNSSEC
+ - Name server
+ - Syntax
 
 A secondary name server operator should follow the advice in the BCP document
 [@!RFC2182].
