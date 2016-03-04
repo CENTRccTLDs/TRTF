@@ -264,7 +264,14 @@ organisation level zones, with at least one which must be well
 removed from the others."
 
 In order to avoid any operational problems, a delegation SHOULD contain
-at least two (2) name servers.
+at least two (2) authoritative name servers.
+
+## The NS RR set in the parent SHOULD be a subset of the NS RR set in the child
+
+As per the name resolving algorithm described in [@!RFC1034] the NS RR
+in the child zone is authoritative for the zone, and any delegation hints
+in the parent are discarded in the resolving process. The NS RR set in
+the parent zone SHOULD be a subset of the NS RR set in the child zone.
 
 ## The name servers SHOULD NOT belong to the same AS
 
