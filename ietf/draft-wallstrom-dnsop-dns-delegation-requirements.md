@@ -181,15 +181,16 @@ queries using the DNS protocol.
 ## All name servers MUST have UDP connectivity over port 53
 
 DNS queries are sent using UDP on port 53, as described in Section 4.2.1 of
-[@!RFC1035]. A name server MUST respond to DNS queries over UDP.
+[@!RFC1035]. A name server MUST respond to DNS queries over UDP for each
+IP address configured for that name server.
 
 ## All name servers MUST have TCP connectivity over port 53
 
 In addition to UDP, DNS queries can also be sent using TCP on port 53, as
 described in Section 4.2.2 of [@!RFC1035]. A name server MUST respond to DNS
-queries over TCP. This requirement has also been further clarified in
-[@I-D.ietf-dnsop-5966bis], which makes TCP a REQUIRED part of a full DNS
-protocol implementation.
+queries over TCP for each IP address configured for that name server. This
+requirement has also been further clarified in [@I-D.ietf-dnsop-5966bis],
+which makes TCP a REQUIRED part of a full DNS protocol implementation.
 
 It should be noted that even though [@I-D.ietf-dnsop-5966bis] requires TCP for
 a DNS protocol implementation, it does not make specific recommendations to
