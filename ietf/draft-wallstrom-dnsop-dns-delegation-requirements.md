@@ -261,6 +261,10 @@ and summarize many operational issues with the delegation of a zone.
 For a delegation to work continuously if one component fails, there
 are operational considerations to ensure this.
 
+Section 4.2.2 [@!RFC1034] also adds that the administraters of both
+the parent and child zone should ensure that NS and glue RRs on both
+sides of the zone cut are consistent.
+
 ## The delegation SHOULD contain at least two name servers
 
 Section 4.1 [@!RFC1034] states that by administrative fiat we require
