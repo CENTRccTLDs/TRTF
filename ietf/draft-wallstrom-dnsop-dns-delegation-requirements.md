@@ -60,7 +60,7 @@ a delegated domain name. This document is based on current RFCs and
 documents requirements that are protocol specific, but also administrative
 policy requirements drawn from best practices and recommendations.
 
-The requirements are split into these different areas, to easier
+The DNS requirements are split into these different areas, to easier
 differentiate between what they are for:
 
  - Basic
@@ -74,6 +74,12 @@ differentiate between what they are for:
 
 A secondary name server operator should follow the advice in the BCP document
 [@!RFC2182].
+
+Nothing in this document precludes others testing servers for protocol
+compliance. DNS operators should test their servers to ensure that their
+vendors have shipped protocol compliant products. Nameserver vendors can
+use these tests as a part of this release processes. Registrants can use
+these tests to check their DNS operators servers.
 
 ## DNS Terminology
 
