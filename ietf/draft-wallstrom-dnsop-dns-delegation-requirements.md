@@ -2,7 +2,7 @@
 
     Title = "DNS Delegation Requirements"
     abbrev = "DNS Delegation Requirements"
-    category = "info"
+    category = "bcp"
     docName = "draft-wallstrom-dnsop-dns-delegation-requirements-00"
     ipr= "trust200902"
     area = "Internet"
