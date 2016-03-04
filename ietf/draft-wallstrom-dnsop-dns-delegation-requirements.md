@@ -63,14 +63,14 @@ policy requirements drawn from best practices and recommendations.
 The requirements are split into these different areas, to easier
 differentiate between what they are for:
 
- 1. Basic
- 2. Address
- 3. Connectivity
- 4. Consistency
- 5. Delegation
- 6. DNSSEC
- 7. Name server
- 8. Syntax
+ - Basic
+ - Address
+ - Connectivity
+ - Consistency
+ - Delegation
+ - DNSSEC
+ - Name server
+ - Syntax
 
 A secondary name server operator should follow the advice in the BCP document
 [@!RFC2182].
@@ -188,14 +188,14 @@ DNS queries are sent using UDP on port 53, as described in Section 4.2.1 of
 In addition to UDP, DNS queries can also be sent using TCP on port 53, as
 described in Section 4.2.2 of [@!RFC1035]. A name server MUST respond to DNS
 queries over TCP. This requirement has also been further clarified in
-[@RFC5966], which makes TCP a REQUIRED part of a full DNS protocol
-implementation.
+[@I-D.ietf-dnsop-5966bis], which makes TCP a REQUIRED part of a full DNS
+protocol implementation.
 
-It should be noted that even though [@RFC5966] requires TCP for a DNS protocol
-implementation, it does not make specific recommendations to operators of DNS
-servers. However, it also notes that failure to support TCP (or the blocking of
-DNS over TCP at the network layer) may result in resolution failure and/or
-application-level timeouts.
+It should be noted that even though [@I-D.ietf-dnsop-5966bis] requires TCP for
+a DNS protocol implementation, it does not make specific recommendations to
+operators of DNS servers. However, it also notes that failure to support TCP
+(or the blocking of DNS over TCP at the network layer) may result in resolution
+failure and/or application-level timeouts.
 
 
 # Consistency requirements
@@ -334,7 +334,7 @@ the in-bailiwick glue for the name servers in the child.
 If the glue address mismatch between the parent zone and the child, this
 is a strong indication of configuration error.
 
-## SOA MNAME MUST be authoritative for the zone
+## SOA MNAME SHOULD be authoritative for the zone
 
 The hostname of the MNAME field may or may not be listed among the delegated
 name servers, but SHOULD still be authoritative for the zone. MNAME may be used
