@@ -215,7 +215,7 @@ considered bad Internet practice due to their capability of assisting in large
 scale DDoS attacks. The introduction to [@RFC5358] elaborates on mixing
 recursor and authoritative functionality. Section 2.5 of [@RFC2870] have very specific requirement on disabling recursion functionality on root name servers.
 
-## Name servers SHOULD support ENS0
+## Name servers SHOULD support EDNS0
 
 EDNS0 is a mechanism to announce capabilities of a DNS implementation, and is
 now basically required by any new functionality in DNS such as DNSSEC.
