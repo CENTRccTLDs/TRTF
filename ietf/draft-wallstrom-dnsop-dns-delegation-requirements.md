@@ -85,9 +85,10 @@ these tests to check their DNS operators servers.
 This document attempts to fully follow the DNS terminology as defined in
 [@!RFC7719].
 
-Many requirements in this document deal with the properties of a name server
-that is used as part of a delegation, therefore the wording mentioning the use
-of a name server as part of this is omitted.
+Many requirements in this document deal with the properties of a
+name server that is used as part of a delegation, therefore the wording
+mentioning the use - authoritative or recursive - of a name server as part of
+this is omitted.
 
 ## Reserved Words
 
@@ -201,7 +202,7 @@ It should be noted that even though [@!RFC7766] requires TCP for a DNS protocol
 implementation, it does not make specific recommendations to operators of DNS
 servers. However, it also notes that failure to support TCP (or the blocking of
 DNS over TCP at the network layer) may result in resolution failure and/or
-application-level timeouts.
+application-level timeouts. The operational requirements on DNS Transport over TCP are further discussed [@I-D.kristoff-dnsop-dns-tcp-requirements].
 
 
 # Name server requirements
