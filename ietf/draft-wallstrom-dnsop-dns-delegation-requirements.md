@@ -243,13 +243,18 @@ most hostnames.
 # Consistency requirements
 
 For DNS resolver behaviour to be consistent for a domain, it is important that
-the authoritative data for the domain to be consistent. All authoritative
-name servers for a zone should serve the same data. An indicator of operator
-failure is that the SOA record or the NS RR set differs between the
-authoritative name servers.
+the authoritative data for the domain to be consistent. All authoritative name
+servers for a zone should serve the same data, although it should be noted that
+there exists cases where authoritative name servers are configured to reply
+with different answers depending on the client source address and/or query
+options such as EDNS0 client subnet option as specified in [@RFC7871].
+
+An indicator of inconsistency is that infrastructure records (e.g., SOA and NS)
+differs between the authoritative name servers.
 
 Section 4.6 in [@RFC4786] advices that data synchronisation in an anycast setup
 should be done in a manner so that anycast nodes operate in a consistent manner.
+
 
 ## All name servers SHOULD respond with the same SOA serial number
 
