@@ -14,9 +14,8 @@
     initials="P."
     surname="Wallstrom"
     fullname="Patrik Wallstrom"
-    organization="IIS"
         [author.address]
-        email="pawal@iis.se"
+        email="pawal@blipp.com"
  
     [[author]]
     initials="J."
