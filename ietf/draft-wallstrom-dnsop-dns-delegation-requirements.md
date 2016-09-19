@@ -204,6 +204,41 @@ operators of DNS servers. However, it also notes that failure to support TCP
 failure and/or application-level timeouts.
 
 
+# Name server requirements
+
+## Authoritative name servers SHOULD NOT be recursive
+
+To ensure consistency in DNS, an authoritative name server SHOULD NOT be
+configured to do recursive lookups. Also, open recursive resolvers are
+considered bad Internet practice due to their capability of assisting in large
+scale DDoS attacks. The introduction to [@RFC5358] elaborates on mixing
+recursor and authoritative functionality. Section 2.5 of [@RFC2870] have very specific requirement on disabling recursion functionality on root name servers.
+
+## Name servers SHOULD support ENS0
+
+EDNS0 is a mechanism to announce capabilities of a DNS implementation, and is
+now basically required by any new functionality in DNS such as DNSSEC.
+Initially standardized in [@RFC2671] and later updated by [@RFC6891], EDNS0 is
+a mechanism to announce capabilities of a DNS implementation.
+
+## Name servers MUST process QNAME case insensitive
+
+The DNS standards require that nameservers treat names with case insensitivity.
+That is, the names example.com and EXAMPLE.COM should resolve to the same IP
+address. However, in the response, most nameservers echo back the name as it
+appeared in the request, preserving the original case. This is specified in
+[@RFC1034] and [@RFC1035], and further clarified by [@!RFC4343].
+
+Therefore, another way to add entropy to requests is to randomly vary the case
+of letters in domain names queried. This technique, also known as "0x20"
+because bit 0x20 is used to set the case of of US-ASCII letters, was first
+proposed in [@I-D.vixie-dnsext-dns0x20], Use of Bit 0x20 in DNS Labels to
+Improve Transaction Identity. With this technique, the nameserver response must
+match not only the query name, but the case of every letter in the name string;
+for example, wWw.eXaMpLe.CoM or WwW.ExamPLe.COm. This may add little or no
+entropy to queries for the top-level and root domains, but it's effective for
+most hostnames.
+
 # Consistency requirements
 
 For DNS resolver behaviour to be consistent for a domain, it is important that
