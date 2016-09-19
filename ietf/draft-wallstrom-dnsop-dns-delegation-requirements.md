@@ -65,10 +65,10 @@ differentiate between what they are for:
  - Basic
  - Address
  - Connectivity
+ - Name server
  - Consistency
  - Delegation
  - DNSSEC
- - Name server
  - Syntax
 
 A secondary name server operator should follow the advice in the BCP document
