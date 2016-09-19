@@ -76,7 +76,7 @@ A secondary name server operator should follow the advice in the BCP document
 
 Nothing in this document precludes others testing servers for protocol
 compliance. DNS operators should test their servers to ensure that their
-vendors have shipped protocol compliant products. Nameserver vendors can
+vendors have shipped protocol compliant products. Name server vendors can
 use these tests as a part of this release processes. Registrants can use
 these tests to check their DNS operators servers.
 
@@ -85,7 +85,7 @@ these tests to check their DNS operators servers.
 This document attempts to fully follow the DNS terminology as defined in
 [@!RFC7719].
 
-Many requirements in this document deal with the properties of a nameserver
+Many requirements in this document deal with the properties of a name server
 that is used as part of a delegation, therefore the wording mentioning the use
 of a name server as part of this is omitted.
 
@@ -223,9 +223,9 @@ a mechanism to announce capabilities of a DNS implementation.
 
 ## Name servers MUST process QNAME case insensitive
 
-The DNS standards require that nameservers treat names with case insensitivity.
+The DNS standards require that name servers treat names with case insensitivity.
 That is, the names example.com and EXAMPLE.COM should resolve to the same IP
-address. However, in the response, most nameservers echo back the name as it
+address. However, in the response, most name servers echo back the name as it
 appeared in the request, preserving the original case. This is specified in
 [@RFC1034] and [@RFC1035], and further clarified by [@!RFC4343].
 
@@ -233,7 +233,7 @@ Therefore, another way to add entropy to requests is to randomly vary the case
 of letters in domain names queried. This technique, also known as "0x20"
 because bit 0x20 is used to set the case of of US-ASCII letters, was first
 proposed in [@I-D.vixie-dnsext-dns0x20], Use of Bit 0x20 in DNS Labels to
-Improve Transaction Identity. With this technique, the nameserver response must
+Improve Transaction Identity. With this technique, the name server response must
 match not only the query name, but the case of every letter in the name string;
 for example, wWw.eXaMpLe.CoM or WwW.ExamPLe.COm. This may add little or no
 entropy to queries for the top-level and root domains, but it's effective for
