@@ -507,6 +507,10 @@ The Name Server name MUST be a valid hostname according to the rules
 defined in Section 2.3.1 of [@!RFC1035], in Section 2.1 in [RFC1123],
 Section 11 in [@!RFC2181] and Section 2 and 5 in [@RFC3696].
 
+## The NS names MUST NOT be an alias
+
+As specified in Section 10.3 of [@!RFC2181], the Name Server name MUST NOT be an alias (CNAME).
+
 ## The SOA RNAME MUST not contain the '@' character
 
 The SOA RNAME field is a mailbox address defined in Section 3.3 of [@!RFC1034]
