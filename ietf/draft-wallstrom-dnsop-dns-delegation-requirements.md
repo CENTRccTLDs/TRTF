@@ -3,12 +3,12 @@
     Title = "DNS Delegation Requirements"
     abbrev = "DNS Delegation Requirements"
     category = "bcp"
-    docName = "draft-wallstrom-dnsop-dns-delegation-requirements-02"
+    docName = "draft-wallstrom-dnsop-dns-delegation-requirements-03"
     ipr= "trust200902"
     area = "Internet"
     workgroup = "DNSOP"
  
-    date = 2016-09-19T12:00:00Z
+    date = 2016-09-26T08:00:00Z
  
     [[author]]
     initials="P."
