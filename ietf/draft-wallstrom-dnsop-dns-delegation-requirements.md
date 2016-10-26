@@ -8,7 +8,7 @@
     area = "Internet"
     workgroup = "DNSOP"
  
-    date = 2016-09-26T08:00:00Z
+    date = 2016-10-26T08:00:00Z
  
     [[author]]
     initials="P."
