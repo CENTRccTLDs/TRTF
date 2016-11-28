@@ -3,12 +3,12 @@
     Title = "DNS Delegation Requirements"
     abbrev = "DNS Delegation Requirements"
     category = "bcp"
-    docName = "draft-wallstrom-dnsop-dns-delegation-requirements-03"
+    docName = "draft-wallstrom-dnsop-dns-delegation-requirements-04"
     ipr= "trust200902"
     area = "Internet"
     workgroup = "DNSOP"
  
-    date = 2016-10-26T08:00:00Z
+    date = 2016-12-24T08:00:00Z
  
     [[author]]
     initials="P."
@@ -117,13 +117,12 @@ for this document.
 
 A DNS delegation MUST have a parent domain from which it is delegated. The
 concept of zone cuts was first described in [@!RFC1034] and later clarified in
-Section 6 of [@RFC2182]. The only exception is the root zone, which do not have
-a parent zone.
+Section 6 of [@RFC2182]. The only exception is the root zone, which does not have a parent zone.
    
 ## The domain MUST have at least one working name server
 
 A fully working DNS delegation has a parent zone delegating the zone to a set
-of child name servers. At least one name server MUST be able to answer DNS
+of child name servers. At least one name server MUST answer DNS
 queries in order to be able to authoritatively serve data for the child zone.
 
 
@@ -213,7 +212,7 @@ To ensure consistency in DNS, an authoritative name server SHOULD NOT be
 configured to do recursive lookups. Also, open recursive resolvers are
 considered bad Internet practice due to their capability of assisting in large
 scale DDoS attacks. The introduction to [@RFC5358] elaborates on mixing
-recursor and authoritative functionality. Section 2.5 of [@RFC2870] have very specific requirement on disabling recursion functionality on root name servers.
+recursor and authoritative functionality. Section 2.5 of [@RFC2870] have very specific requirements on disabling recursion functionality on root name servers.
 
 ## Name servers SHOULD support EDNS0
 
@@ -473,13 +472,13 @@ The RRSIG validity periods in the zone SHOULD NOT be too short nor too long.
 
 ## The name server MUST include RRSIG in all responses to DNSSEC queries
 
-If the zone is signed, the name servers MUST be able to include RRSIG RRs
+If the zone is signed, the name servers MUST include RRSIG RRs
 as additional data in any response when the query has the DO bit set, as
 described in Section 3.1.1 of [@!RFC4035].
 
 ## The name servers MUST include valid NSEC/NSEC3 record in NXDOMAIN responses
 
-If the zone is signed, the name servers MUST be able to include NSEC/NSEC3 RRs
+If the zone is signed, the name servers MUST include NSEC/NSEC3 RRs
 as additional data in any response when the query has the DO bit set, as
 described in Section 3.1.1 of [@!RFC4035].
 
